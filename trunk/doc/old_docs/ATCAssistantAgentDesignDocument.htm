@@ -1,0 +1,1014 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="ATCAssistantAgentDesignDocument_files/filelist.xml">
+<title>Design Document</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Raytheon</o:Author>
+  <o:LastAuthor>Raytheon</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-12-08T00:48:00Z</o:Created>
+  <o:LastSaved>2007-12-08T00:48:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1774</o:Words>
+  <o:Characters>10118</o:Characters>
+  <o:Company>EW</o:Company>
+  <o:Lines>84</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>11869</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:ActiveWritingStyle Lang="EN-US" VendorID="64" DLLVersion="131078"
+   NLCheck="1">1</w:ActiveWritingStyle>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:DrawingGridHorizontalSpacing>5 pt</w:DrawingGridHorizontalSpacing>
+  <w:DrawingGridVerticalSpacing>6.8 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helv;
+	panose-1:2 11 6 4 2 2 2 3 2 4;
+	mso-font-alt:Arial;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:3 0 0 0 1 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Helv;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	layout-grid-mode:line;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;
+	color:blue;
+	layout-grid-mode:line;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:Helv;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	layout-grid-mode:line;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:Helv;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	layout-grid-mode:line;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+tt
+	{font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.3in;
+	mso-header:url("ATCAssistantAgentDesignDocument_files/header.htm") h1;
+	mso-paper-source:0 1;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:307324072;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2055115606 -1712313622 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:9.0pt;
+	mso-level-number-position:left;
+	margin-left:9.0pt;
+	text-indent:0in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	color:windowtext;
+	mso-ansi-font-weight:normal;
+	mso-ansi-font-style:normal;}
+@list l1
+	{mso-list-id:533345793;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-196545750 -1712313622 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:0in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	color:windowtext;
+	mso-ansi-font-weight:normal;
+	mso-ansi-font-style:normal;}
+@list l2
+	{mso-list-id:1173883837;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-515208972 -1712313622 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:9.0pt;
+	mso-level-number-position:left;
+	margin-left:9.0pt;
+	text-indent:0in;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Symbol;
+	color:windowtext;
+	mso-ansi-font-weight:normal;
+	mso-ansi-font-style:normal;}
+@list l3
+	{mso-list-id:1549149196;
+	mso-list-type:hybrid;
+	mso-list-template-ids:753855066 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>Design
+Document for ATCAssistantAgent<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><u><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>Messages:<o:p></o:p></span></u></b></p>
+
+<p class=MsoNormal><u><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></span></u></p>
+
+<pre><tt><span style='font-size:12.0pt;font-family:"Times New Roman"'>msgHereIsRiskMitigation(</span></tt><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>KnowledgeBaseAgent j<tt><span
+style='mso-ansi-font-size:12.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman"'>, RiskMitigation x)<o:p></o:p></span></tt></span></pre>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'>Do(&quot;Risk/Mitigation
+recieved: &quot;+x); <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:9.0pt;text-indent:27.0pt'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>s =
+ATCStatus.recievedRisks;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:9.0pt;text-indent:27.0pt'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>t.add(x);
+</span><span style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Add
+the RiskMitigation to the list for processing<span style='mso-tab-count:1'>   </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:9.0pt;text-indent:27.0pt'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>l = j; <span
+style='mso-tab-count:1'>   </span></span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:red'>//Set the KB agent to the KB agent
+created in the class.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<pre style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public void userChoice(Action x, int i)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:.25in'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>s =
+ATCStatus.recievedUserChoice;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:.25in'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>p.put(i,
+x); </span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//use the userid as a key to get to the action he picked</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:.25in'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>ids.add(i);
+</span><span style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//add
+the user id to the stack in order to access it for the map.</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-indent:.25in'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<pre><span style='font-size:12.0pt;font-family:"Times New Roman"'>public void msgUserLoggedIn(int x, String type)<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span>this.x = x; <span style='color:red'>//Get the UserId for that particular<span style='mso-spacerun:yes'>  </span>user and set it in the class.</span><o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span>this.types = types; <span
+style='color:red'>//Get the type of user and set it in the class.<o:p></o:p></span></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></pre><pre><span style='font-size:12.0pt;
+font-family:"Times New Roman"'><span style='mso-tab-count:1'>               </span><o:p></o:p></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>public void msgHereIsRealWorld(RealWorld tempRW){<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>                            </span>realWorld = tempRW;<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span>}<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//Get<span style='mso-spacerun:yes'>  </span>message from RealWorld in order to get a copy of the RealWorld object created.<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-spacerun:yes'>    </span>public void msgVerdictOnAction(Action k, Boolean z)<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span>reply.add(k); <span
+style='color:red'>//Add the action to the list for processing</span><o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>            </span>response.put(k, z); <span
+style='color:red'>//Add the KB reply along with action in a map.<o:p></o:p></span></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>   </span>//The above msg will be used in a later version, perhaps the<span style='mso-spacerun:yes'>  </span>last one where the user action will be checked against the KB for verfication. This is a way to avoid the user choosing an action that<span style='mso-spacerun:yes'>  </span>may end up causing more problems and disasters, a preventive measure.<o:p></o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><o:p>&nbsp;</o:p></span></pre><pre style='margin-left:9.0pt'><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'><o:p>&nbsp;</o:p></span></pre><pre
+style='margin-left:9.0pt'><span style='font-size:12.0pt;font-family:"Times New Roman"'>public void msgHereIsRealWorld(RealWorld tempRW){<o:p></o:p></span></pre><pre
+style='margin-left:.5in'><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:2'>                   </span>realWorld = tempRW; <span
+style='color:red'>//Set the RealWorld object in my class to the one that’s being passed to me.</span><o:p></o:p></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>               </span>}<o:p></o:p></span></pre><pre><b style='mso-bidi-font-weight:
+normal'><u><span style='font-size:12.0pt;font-family:"Times New Roman"'>Data:</span></u></b><b
+style='mso-bidi-font-weight:normal'><span style='font-size:12.0pt;font-family:
+"Times New Roman"'><o:p></o:p></span></b></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public List&lt;RiskMitigation&gt; t = new
+LinkedList&lt;RiskMitigation&gt;();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//List that’s used to keep track of any new incoming RiskMitigations
+from the KnowledgeBase that needs to be processed.<span
+style='mso-spacerun:yes'>  </span>Anytime a new object of RiskMitigation is
+received, its placed on the list right away for processing, and then can be
+directly processed by the scheduler.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public Map&lt;Integer, Action&gt; p = new HashMap&lt;Integer,
+Action&gt;();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//This map will keep an organized table of the action the user has
+choosen for post-processing.<span style='mso-spacerun:yes'>  </span>Anytime the
+user clicks a new action, we can add it right away to this map along with that
+user’s id.<span style='mso-spacerun:yes'>  </span>We use the id a as key into
+their action choice, so as to make it easier because if multiple users selected
+the same action, then it would be quite impossible to know who to select, and
+easier.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public Map&lt;Risk, List&lt;Mitigation&gt;&gt; finals =
+Collections.synchronizedMap(new TreeMap&lt;Risk, List&lt;Mitigation&gt;&gt;();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//This map represents what the risk and list of mitigations will
+look like after they have been prioritized.<span style='mso-spacerun:yes'> 
+</span>The scheduler will call an action that will then sort out the risks and
+mitigations accordingly.<span style='mso-spacerun:yes'>  </span>For right now,
+since there’s only one class of risks we don’t have to worry about any
+prioritizing of the different subclasses.<span style='mso-spacerun:yes'> 
+</span>However this still works just as good.<span style='mso-spacerun:yes'> 
+</span>Any time a new Risk is added to the list along with its mitigations,
+it’s immediately sorted in the TreeMap.<span style='mso-spacerun:yes'> 
+</span>Having it be immediately sorted makes the idea of prioritizing the risks
+that much easier.<span style='mso-spacerun:yes'>  </span>The only thing is the
+comparator which was put into the Risk class cause of ease and one less class
+to have to worry about now. However, risks are still organized the same way as
+before.<span style='mso-spacerun:yes'>  </span>And also, we made it
+synchronized in order to make sure that while this is going on and say another
+RiskMitigation object comes in or another choice from the user, both will have
+to wait till the list is done then those actions will be attended to.<span
+style='mso-spacerun:yes'>  </span>This is done so that while the map is being
+prioritized, it won’t just stop and do something else because know you lost the
+data, and who knows what might have changed where the old data is lost or even
+altered as a result of this.<span style='mso-spacerun:yes'>  </span>So its to
+avoid future problems that might arise.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public enum ATCStatus {nothing, recievedUserChoice,
+recievedRisks, actionFired,<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>prioritizedRisks};<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//The different stages of the agent.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>public Queue&lt;Integer&gt; ids = new
+LinkedList&lt;Integer&gt;(); <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//Keep track of the ids everytime a new action is called, that way
+you can use these ids as a way of accessing the actions the user has choosen,
+and verifying with the KB that the requested action is okay to execute.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>private ATCStatus s; <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//To keep track of the status of the ATCAgent.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>private KnowledgeBaseAgent knowledgeBase; <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//Used in communicating with the KnowledgeBaseAgent, predominantly
+with the messages.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>private LoggingAgent log; <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//Used in communicating with the LoggingAgent, predominantly with
+the messages</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>.<o:p></o:p></span></p>
+
+<pre><span style='font-size:12.0pt;font-family:"Times New Roman"'>private RealWorld realWorld; <span
+style='color:red'>//Used for communication with RealWorld.</span><o:p></o:p></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>private HW3GUI g; //<span
+style='color:red'>Used for communication with Gui.<o:p></o:p></span></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>public List&lt;Action&gt; reply = new LinkedList&lt;Action&gt;();<span
+style='color:red'>//Tell ATC that there’s action waiting to be processed.<o:p></o:p></span></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-spacerun:yes'>  </span>public List&lt;Action&gt; execute = new LinkedList&lt;Action&gt;();<span
+style='color:red'>//Actions that are to be executed.<o:p></o:p></span></span></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-spacerun:yes'>    </span>public List&lt;RiskMitigation&gt; done = new LinkedList&lt;RiskMitigation&gt;(); <span
+style='color:red'>//The finished prioritizations of RiskMitigations goes here for outputting to GUI.<o:p></o:p></span></span></pre><pre><u><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></pre><pre><b
+style='mso-bidi-font-weight:normal'><u><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>Actions:<o:p></o:p></span></u></b></pre><pre><u><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></pre><pre><span
+style='font-size:12.0pt;font-family:"Times New Roman"'>Prioritize()<o:p></o:p></span></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>{<span style='mso-tab-count:2'>                      </span><span
+style='mso-tab-count:1'>            </span>int riskType = riskOrganize();</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Get the type
+of Risk returned by an integer for prioritizing the<span
+style='mso-spacerun:yes'>  </span>MitigationsList.</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>mitigationsOrganize(riskType);</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Organize Mitigations
+according to Risk.<span style='mso-tab-count:1'>            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'>finals.put(recievedRiskMitigations.get(0).getRisk(),recievedRiskMitigations.get(0).getMitigations());</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Put the
+first Risk and Mitigation in the<span style='mso-spacerun:yes'>  </span>map.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'>recievedRiskMitigations.remove(0);</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>// Then remove
+that RiskMitigation from the List.</span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>synchronized(finals){<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'><span
+style='mso-spacerun:yes'>    </span>//Get the Set of Keys from the Map that
+contain the final order of the Risks and Mitigations. Then go through each key,
+extract that list from the map and send <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>it to the LoggingAgent. Afterwards, add it to a list that contains
+RiskMitigations for GUI.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:3'>                                    </span>for(Risk
+risk:finals.keySet()){<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:3'>                                    </span><span
+style='mso-spacerun:yes'>    </span>RiskMitigation temp = new
+RiskMitigation(risk, finals.get(risk));<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:3'>                                    </span>LoggingAgent.getInstance().msgRiskMitigationOutput(temp);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Weather Risk
+both ground and<span style='mso-spacerun:yes'>  </span>local controller recieve
+it.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span>if(risk.getType()
+== &quot;weather&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>temp.addATCType(ATCType.local);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>temp.addATCType(ATCType.ground);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>done.add(temp);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span>else
+if(risk.getType() == &quot;collision&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>{<span style='mso-tab-count:1'>      </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:red'>//Figure out who gets the risk, Ground
+or Local Controller.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>CollisionRisk
+one = (CollisionRisk)risk;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//If the plane
+is on the taxiway, then Ground.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>if(one.getWay().getType()
+== &quot;taxiway&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:6'>                                                                        </span>temp.addATCType(ATCType.ground);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:6'>                                                                        </span>done.add(temp);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//if the plane
+is on the runway, then Local.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>else
+if(one.getWay().getType() == &quot;runway&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:6'>                                                                        </span>temp.addATCType(ATCType.local);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>//</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>Tells the GUI who gets this Risk from the enums, such as
+ATCType.local or ground.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:6'>                                                                        </span>done.add(temp);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span>else<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:5'>                                                            </span>done.add(temp);</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Dummy
+RiskMitigation added to the end as a way<span style='mso-spacerun:yes'> 
+</span>for GUI to know that there aren’t anymore RiskMitigations coming.</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:4'>                                                </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:3'>                                    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>finals.clear();</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Clear out
+the map.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>g.output(makeDeepCopy(done));</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Output the
+completed, organized RiskMitigations to the GUI for printing.</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>s
+= ATCStatus.prioritizedRisks;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>done.clear();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><span style='mso-spacerun:yes'>   </span>//Pass in the risk and then
+set the priority of that risk accordingly. Here, we say that the severity of
+CollisionRisk is higher than the WeatherRisk. We end up returning an integer
+for prioritizing the mitigations, so as to know which risk these mitigations
+are dealing with.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>private int
+riskOrganize()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<pre><span style='font-size:12.0pt;font-family:"Times New Roman"'><span
+style='mso-tab-count:1'>               </span><span style='color:red'>//Its decided that the CollisionRisk will get a higher priority versus the other Risks, therefore his severity will be set to 8 and the other risk, WeatherRisk, will be set to 6. However for now, we just deal with CollisionRisk.<o:p></o:p></span></span></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>if(t.get(0).getRisk().getType()
+== &quot;collision&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>t.get(0).getRisk().setSeverity(8);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-tab-count:1'>            </span>return 0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>else
+if(t.get(0).getRisk().getType() == &quot;weather&quot;)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>       </span>t.get(0).getRisk().setSeverity(6);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'><span
+style='mso-spacerun:yes'>       </span>return 1;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>else<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>return
+-1;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<pre><span style='font-size:12.0pt;font-family:"Times New Roman";mso-bidi-font-family:
+"Courier New"'><span style='mso-tab-count:1'>               </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><span style='mso-tab-count:
+1'>               </span><span style='color:red'>//We end up returning an integer with this function for the prioritizing of the Mitigations. So with CollisionRisk return 0, and for WeatherRisk return 1.<o:p></o:p></span></span></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>  </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>   </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Here we
+organize the mitigations of the risks. The only parameter thats taken in is the
+integer from the riskOrganize. We use to organize the mitigations; so if the
+risk is Collision than we would try and organize the mitigations so that Move
+Planes is on top versus stop or Slow planes. (The details of this aspect will
+be taken care of hopefully by next submission). For now, the MitigationList
+just gets inverted, so the first element goes last and last element goes
+first,etc. We are showing however that the algorithm works, but not to the
+expectations we have of it.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>private void
+mitigationsOrganize(int i)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>int point =
+0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>List
+&lt;Mitigation&gt;temp = new LinkedList&lt;Mitigation&gt;();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>List
+&lt;Mitigation&gt;temp2 = new LinkedList&lt;Mitigation&gt;();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Remove just
+the mitigations from the RiskMitigations List and put in another list for
+prioritizing.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>for(Mitigation
+x:t.get(0).getMitigations())<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>temp.add(x);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'>int size = 1;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><span style='mso-tab-count:1'>            </span>//Depending upon
+the risk, the mitigations will be organzied. However for now, regardless of the
+risk, the prioritizing will be the same. A 0 indicates a CollisionRisk<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>if(i == 0)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>while(0
+&lt;= temp.size() - size){<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>temp2.add(temp.get(temp.size()
+- size));<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>size++;}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//A 1
+indicates a WeatherRisk<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>else if(i ==
+1)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>     </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'> </span>while(0 &lt; temp.size() - size){<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>temp2.add(temp.get(temp.size()
+- size));<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>size++;}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Now merge
+the ordered list with the orginal Mitigations List given by the KB.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>for(Mitigation x:temp2)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>     </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'> </span>t.get(0).addMitigation(point, x); </span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Pass in the
+position to place the elements in order to have them put in the correct spots
+according to the prioritization.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span><span
+style='mso-spacerun:yes'> </span>point++; </span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:red'>//Increment the index position for the
+next element.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>     </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>temp2.clear(); </span><span style='font-size:
+12.0pt;font-family:"Times New Roman";color:red'>//Remove all elements from this
+List.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'> </span>temp.clear(); </span><span style='font-size:
+12.0pt;font-family:"Times New Roman";color:red'>//Remove all elements from this
+List.</span><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>}<span
+style='mso-spacerun:yes'>    </span></span><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:red'>//That’s it.</span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:windowtext'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//Here the
+action choosen by the user is then executed but this according to whether<span
+style='mso-spacerun:yes'>  </span>the KB feels it to be the best action. <o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-spacerun:yes'>    </span>private void
+actionResponse(Action action){<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>reply.remove(action);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span></span><span
+style='font-size:12.0pt;font-family:"Times New Roman";color:red'>//If the
+reponse from the KB is true, then execute the action and let the following
+agents know whats going on.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:12.0pt;
+font-family:"Times New Roman";color:windowtext'>if(response.get(action))<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>LoggingAgent.getInstance().msgActionExecuted(action,
+awaitingReplyFromKB.get(action));<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>knowledgeBase.msgHereIsAction(action);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>s
+= ATCStatus.actionFired;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>userAction.remove(action);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>print(&quot;Executing
+Action&quot; + action.getName());<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>action.execute();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'><span style='mso-tab-count:1'>            </span>//If response is
+false, then tell the GUI to print an error message or to<span
+style='mso-spacerun:yes'>  </span>do something to let the user know of his
+fault.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>else<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:2'>                        </span>print(&quot;false&quot;);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span><span
+style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>awaitingReplyFromKB.remove(action);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><span style='mso-tab-count:1'>            </span>response.remove(action);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<pre><b style='mso-bidi-font-weight:normal'><u><span style='font-size:12.0pt;
+font-family:"Times New Roman"'>Scheduler:<o:p></o:p></span></u></b></pre><pre><u><span
+style='font-size:12.0pt;font-family:"Times New Roman"'><o:p><span
+ style='text-decoration:none'>&nbsp;</span></o:p></span></u></pre>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>If the status of the ATC is equal to recievedUserChoice then
+call the fire action and pass in as an argument the first id off the stack
+(checkAction(ids.poll())), then return true.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'>Else if the list of reply is not empty, then call
+actionResponse passing in the first element of the list, the head. And finally,
+if t is not empty such that there exists an element in the lists then call the
+action prioritize in order to take care of this new incoming risk, and have it
+be prioritized.<span style='mso-spacerun:yes'>  </span>Afterwards return true.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:windowtext'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:"Times New Roman";
+color:red'>//It was decided that the action the user chooses will have higher
+precedence over any new incoming risks because its based on really the idea of
+the user’s choice.<span style='mso-spacerun:yes'>  </span>If the user choose an
+action that perhaps wasn’t the best choice and may even cause bigger problems
+then this will turn into a national disaster, and the fact that more risks are
+coming in will make this a very ugly situation.<span style='mso-spacerun:yes'> 
+</span>So by having the user’s action on top of the scheduler, will make sure
+that their choice will not have such bad implications if it does turn out to be
+bad because it will be caught and taken care of, then the other new risks will
+be taken care of.<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

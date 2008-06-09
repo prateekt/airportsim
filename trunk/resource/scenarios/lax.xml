@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scenario name="Scenario LAX" airport="lax">
+	
+	<flight>
+		<name>SW 113</name>
+		<type>Arrival</type>
+		<Way>
+			<name>24R</name>
+			<point>alpha</point>
+		</Way>
+		<Gate>G3</Gate>
+		<Mode>Visual</Mode>
+		<Origin>JFK</Origin>
+		<Destination>LAX</Destination>
+		<Pilot>Jimmy</Pilot>
+		<time>0</time>
+	</flight>
+	
+	<flight>
+		<name>Delta 116</name>
+		<type>Departure</type>
+		<Way>
+			<name>E</name>
+			<point>alpha</point>
+		</Way>
+		<Gate>G3</Gate>
+		<Mode>Visual</Mode>
+		<Origin>JFK</Origin>
+		<Destination>LAX</Destination>
+		<Pilot>Peter</Pilot>
+		<time>5000</time>
+	</flight>
+	
+	<flight>
+		<name>US Airways 6</name>
+		<type>Departure</type>
+		<Way>
+			<name>E</name>
+			<point>beta</point>
+		</Way>
+		<Gate>S6</Gate>
+		<Mode>Visual</Mode>
+		<Origin>JFK</Origin>
+		<Destination>LAX</Destination>
+		<Pilot>Helga</Pilot>
+		<time>8000</time>
+	</flight>
+	
+	<flight>
+		<name>Alaska Airlines 1337</name>
+		<type>Arrival</type>
+		<Way>
+			<name>24R</name>
+			<point>beta</point>
+		</Way>
+		<Gate>S6</Gate>
+		<Mode>Visual</Mode>
+		<Origin>JFK</Origin>
+		<Destination>LAX</Destination>
+		<Pilot>Ronald</Pilot>
+		<time>10000</time>
+	</flight>
+	
+	<ClearanceAgent name="CR Agent" transponder="X45TGHY" letter="B" gcfrequency="1.11"></ClearanceAgent>
+	<GroundAgent name="GC Agent"></GroundAgent>
+	<LocalAgent name="LC Agent"></LocalAgent>
+</scenario>

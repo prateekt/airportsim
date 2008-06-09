@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="voicerecognition/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="drivers/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="drivers/junit.jar"/>
+	<classpathentry kind="lib" path="drivers/jsl1_0b1.jar"/>
+	<classpathentry kind="lib" path="drivers/freetts.jar"/>
+	<classpathentry kind="lib" path="drivers/jsapi.jar"/>
+	<classpathentry kind="lib" path="drivers/antlr-2.7.5.jar"/>
+	<classpathentry kind="lib" path="drivers/arq.jar"/>
+	<classpathentry kind="lib" path="drivers/arq-extra.jar"/>
+	<classpathentry kind="lib" path="drivers/cmu_time_awb.jar"/>
+	<classpathentry kind="lib" path="drivers/cmu_us_kal.jar"/>
+	<classpathentry kind="lib" path="drivers/cmudict04.jar"/>
+	<classpathentry kind="lib" path="drivers/cmulex.jar"/>
+	<classpathentry kind="lib" path="drivers/cmutimelex.jar"/>
+	<classpathentry kind="lib" path="drivers/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="drivers/concurrent.jar"/>
+	<classpathentry kind="lib" path="drivers/en_us.jar"/>
+	<classpathentry kind="lib" path="drivers/icu4j_3_4.jar"/>
+	<classpathentry kind="lib" path="drivers/iri.jar"/>
+	<classpathentry kind="lib" path="drivers/jena.jar"/>
+	<classpathentry kind="lib" path="drivers/jenatest.jar"/>
+	<classpathentry kind="lib" path="drivers/jess.jar"/>
+	<classpathentry kind="lib" path="drivers/json.jar"/>
+	<classpathentry kind="lib" path="drivers/jsr94.jar"/>
+	<classpathentry kind="lib" path="drivers/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="drivers/lucene-core-2.0.0.jar"/>
+	<classpathentry kind="lib" path="drivers/mysql-connector-java-5.1.5-bin.jar"/>
+	<classpathentry kind="lib" path="drivers/resolver.jar"/>
+	<classpathentry kind="lib" path="drivers/serializer.jar"/>
+	<classpathentry kind="lib" path="drivers/sphinx4.jar"/>
+	<classpathentry kind="lib" path="drivers/stax-api-1.0.jar"/>
+	<classpathentry kind="lib" path="drivers/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar"/>
+	<classpathentry kind="lib" path="drivers/WSJ_8gau_13dCep_8kHz_31mel_200Hz_3500Hz.jar"/>
+	<classpathentry kind="lib" path="drivers/wstx-asl-3.0.0.jar"/>
+	<classpathentry kind="lib" path="drivers/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="drivers/xercesSamples.jar"/>
+	<classpathentry kind="lib" path="drivers/xml-apis.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Prateek Tandon/Desktop/sphinx4-1.0beta-src/sphinx4-1.0beta/lib/tags.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Prateek Tandon/Desktop/sphinx4-1.0beta-src/sphinx4-1.0beta/lib/TIDIGITS_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/Prateek Tandon/Desktop/sphinx4-1.0beta-src/sphinx4-1.0beta/lib/js.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

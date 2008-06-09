@@ -1,0 +1,585 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List
+href="Departure_Agent_Design_GroundControl_LocalControl_files/filelist.xml">
+<title>LocalControlAgent: Departure Scenario</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Ashwin Appiah</o:Author>
+  <o:LastAuthor>Prateek Tandon</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2008-04-01T01:46:00Z</o:Created>
+  <o:LastSaved>2008-04-01T01:46:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>651</o:Words>
+  <o:Characters>3713</o:Characters>
+  <o:Company>Hewlett-Packard</o:Company>
+  <o:Lines>30</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>4356</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Calibri;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610611985 1073750139 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Calibri;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'>LocalControlAgent: Departure Scenario<o:p></o:p></b></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Data<o:p></o:p></u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Queue&lt;DepartureRequests&gt; DepartureRequests; //fifo
+queue for takeoff requests</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Queue&lt;DepartureRequests<span class=GramE>&gt;<span
+style='mso-spacerun:yes'>  </span>WaitingPlanes</span> //fifo queue for planes
+waiting for clearance</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Collection&lt;CommandVerification&gt; cmdsToVerify;
+//collection of echoed commands </p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=GramE>from</span>
+pilot. Used to determine whether pilot understands what is going on. If the </p>
+
+<p class=MsoNormal style='margin-left:.5in'><span class=GramE>pilot</span> is
+on track, we<span style='mso-spacerun:yes'>  </span>can keep giving him
+commands according to the protocol.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Map&lt;Pilot, String&gt; commandsGiven //mapping of pilot to
+last direction given each pilot</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class DepartureRequest {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+runway;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class CommandVerification {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+echoedCommand;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Messages</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>msgImOnRunway</b>(</span>PilotAgent
+pilot, String runway) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>WaitingPlanes.enqueue(</span>new DepartureRequest(pilot, runway));</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>msgEchoCommand</b>(</span>PilotAgent
+pilot, String echoCommand){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>cmdsToVerify(</span>new<span style='mso-spacerun:yes'> 
+</span>CommandVerification(pilot, echoCommand));</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);<span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Scheduler<o:p></o:p></u></p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal><span class=GramE>If(</span>cmdsToVerify.size() &gt; 0)<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>verifyCommand(</span>cmdsToVerify. dequeue ());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>return</span> true;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>Else <span class=GramE>if(</span>WaitingPlanes.size() &gt; 0){</p>
+
+<p class=MsoNormal><span class=GramE>handleWaitingPlanes(</span>WaitingPlanes.dequeue());</p>
+
+<p class=MsoNormal><span class=GramE>return</span> true;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Else <span class=GramE>if(</span>DepartureRequests.size()
+&gt; 0) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>handleDepartureRequest(</span>DepartureRequests.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>return</span> true;<br>
+}</p>
+
+<p class=MsoNormal><span class=GramE>Else<span style='mso-spacerun:yes'> 
+</span>{</span></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>Return false;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Actions</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>verifyCommand</b>(</span>CommandVerification
+cv<b style='mso-bidi-font-weight:normal'>) </b>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+lastCommand = <span class=GramE>commandsGiven.get(</span>cv.pilot);<span
+style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>if(</span>cv.echoedCommand.equals(lastCommand))<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:2'>                        </span><span
+class=GramE>if(</span>cv.indexOf(“Cleared For Takeoff”)) {</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='mso-tab-count:1'>            </span>//transfer over plane to TRANCON</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'>}</p>
+
+<p class=MsoNormal><span style='mso-tab-count:3'>                                    </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-indent:.5in'>Else {</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//placeholder</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//risk
+of collision, GENERATE A RISK</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>handleWaitingPlanes</b>(</span>DepartureRequest
+dr){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><i
+style='mso-bidi-font-style:normal'>//here we are basically telling the plane to
+hold its position till we clear them for takeoff. <o:p></o:p></i></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>dr.pilot.msgPositionAndHold
+(this); </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+class=GramE>commandsGiven.put(</span>dr.pilot, “Position and Hold”);</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>DepartureRequests.enqueue(</span>dr);</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>handleDepartureRequest</b>(</span>DepartureRequest
+dr){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//Figure
+out what wind condition is, hardcoded for now</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+windCondition = “LOW WIND”;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>dr.pilot.msgClearedForTakeoff
+(); </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+class=GramE>commandsGiven.put(</span>dr.pilot, “Cleared For Takeoff”);</p>
+
+<p class=MsoNormal>}</p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'>GroundControlAgent: Departure Scenario<o:p></o:p></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Messages<o:p></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>//changed this a bit </p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>msgRequestPushBack</b>(</span>
+PilotAgent pilot, String gate, String Loc){ </p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>pushbackRequest.enqueue(</span>new GuidanceRequest(pilot, gate, loc));</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>msgTaxiComplete</b>(</span>
+PilotAgent pilot, String gate, String loc){ </p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//can <span
+class=GramE>be</span> taken out?</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE><b
+style='mso-bidi-font-weight:normal'>msgEchoCommand</b>(</span>PilotAgent pilot,
+String echoedCommand){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>cmdsToVerify(</span>new<span style='mso-spacerun:yes'> 
+</span>CommandVerification(pilot, echoCommand));</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Data<o:p></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE>class</span>
+GuidanceRequest {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>String
+Gate;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>String
+Loc</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class CommandVerification {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+echoedCommand;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Queue&lt;GuidanceRequest&gt;
+guidanceRequests; //requests by pilots for ground control </p>
+
+<p class=MsoNormal style='margin-left:2.5in;text-align:justify;text-indent:
+.5in'><span style='mso-spacerun:yes'>    </span>Guidance</p>
+
+<p class=MsoNormal style='margin-left:2.5in;text-align:justify;text-indent:
+.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Queue&lt;GuidanceRequest&gt;
+pushbackRequests; //requests by pilots for push back</p>
+
+<p class=MsoNormal style='margin-left:2.5in;text-align:justify;text-indent:
+.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Collection&lt;CommandVerification&gt; cmdsToVerify;
+//collection of echoed commands </p>
+
+<p class=MsoNormal style='text-indent:.5in'><span class=GramE>from</span>
+pilot. Used to determine whether pilot understands what is going on. If the </p>
+
+<p class=MsoNormal style='margin-left:.5in'><span class=GramE>pilot</span> is
+on track, we<span style='mso-spacerun:yes'>  </span>can keep giving him
+commands according to the protocol.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Map&lt;Pilot, String&gt; commandsGiven //mapping of pilot to
+last direction given each pilot</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Scheduler<o:p></o:p></u></p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal><span class=GramE>If(</span>cmdsToVerify.size() &gt; 0)<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>verifyCommand(</span>cmdsToVerify. dequeue ());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>return</span> true;</p>
+
+<p class=MsoNormal>Else <span class=GramE>if(</span>guidanceRequests.size()
+&gt;0) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>giveInstructions(</span>guidanceRequests.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>return</span> true;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>Else <span class=GramE>if(</span>pushbackRequest.size()&gt;0){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>handlePushBack(</span>pushbackRequests.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>return</span> true;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal>Else {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>Return
+false;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Actions</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>verifyCommand</b>(</span>CommandVerification
+cv) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+lastCommand = <span class=GramE>commandsGiven.get(</span>cv.pilot);<span
+style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>if(</span>cv.echoedCommand.equals(lastCommand))<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//transfer
+to local control</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}<span style='mso-tab-count:2'>                      </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'>Else {</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//placeholder</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//risk
+of collision, GENERATE A RISK</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><span class=GramE><b style='mso-bidi-font-weight:normal'>giveInstructions</b>(</span>GuidanceRequest
+gr) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//compute
+additional directions, for this version just return blank ArrayList</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>ArrayList&lt;String&gt;
+directions = new ArrayList&lt;String<span class=GramE>&gt;(</span>);</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>gr.pilot.msgUseThisRoute(</span>this, directions);</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+class=GramE>commandsGiven.put(</span>gct.pilot, “Must use this route: ”</p>
+
+<p class=MsoNormal style='margin-left:1.0in'>+ <span class=GramE>stringify(</span>directions));</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span class=GramE><b
+style='mso-bidi-font-weight:normal'>handlePushBack</b>(</span>GuidanceRequest
+gr){</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span><span
+class=GramE>gr.pilot.msgPushBackGranted(</span>this); // I don’t understand why
+the “destGate” should be passed on, so I omitted that part. </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><span
+class=GramE>commandsGiven.put(</span>gr.pilot, “Push Back Granted”);</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>guidanceRequests.enqueue(</span>gr); // putting plane from one
+queue to another. </p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span><span
+class=GramE>stateChanged(</span>);</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>
