@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scenario name="Scenario LAX" airport="lax">
+	
+	<flight>
+		<name>SW 113</name>
+		<type>Departure</type>
+		<Way>
+			<name>E</name>
+			<point>alpha</point>
+		</Way>
+		<Gate>G3</Gate>
+		<Origin>JFK</Origin>
+		<Destination>LAX</Destination>
+		<Pilot>Jimmy</Pilot>
+	</flight>
+	
+	
+	<ClearanceAgent name="CR Agent" transponder="X45TGHY" letter="B" gcfrequency="1.11"></ClearanceAgent>
+	<GroundAgent name="GC Agent"></GroundAgent>
+	<LocalAgent name="LC Agent"></LocalAgent>
+</scenario>

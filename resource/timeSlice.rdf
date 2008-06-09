@@ -1,0 +1,219 @@
+<<<<<<< .mine
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:j.0="http://www.usc.edu/vehiclens#"
+    xmlns:j.1="http://www.usc.edu/airportns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" > 
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#slow-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#slow-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#on-way">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#on-way"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-slow-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-slow-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/airportns#has-weather">
+<rdf:type rdf:resource="http://www.usc.edu/airportns#has-weather"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane D452">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">189.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#reload-fuel-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#reload-fuel-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#low-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#low-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-stop-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-stop-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane NW12">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#unload-fuel-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#unload-fuel-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-turn-left-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-turn-left-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-fuel-amount">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-fuel-amount"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#at-airport">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#at-airport"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/airportns#airport">
+<j.1:has-weather rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foggy</j.1:has-weather>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#med-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#med-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#high-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#high-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#collision-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#collision-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-fuel-capacity">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-fuel-capacity"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#stop-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#stop-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#weather-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#weather-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-direction">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-direction"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#visibility-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#visibility-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#unload-fuel-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#unload-fuel-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-turn-right-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-turn-right-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#move-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#move-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-speed">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-speed"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#reload-fuel-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#reload-fuel-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#keep-calm-and-quiet">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#keep-calm-and-quiet"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#wont-collide">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#wont-collide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane AA93">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R2"/>
+</rdf:Description>
+</rdf:RDF>
+=======
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:j.0="http://www.usc.edu/vehiclens#"
+    xmlns:j.1="http://www.usc.edu/airportns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" > 
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#slow-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#slow-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#on-way">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#on-way"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-slow-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-slow-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/airportns#has-weather">
+<rdf:type rdf:resource="http://www.usc.edu/airportns#has-weather"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane D452">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">189.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#reload-fuel-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#reload-fuel-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#low-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#low-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-stop-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-stop-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane NW12">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R1"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#unload-fuel-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#unload-fuel-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-turn-left-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-turn-left-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-fuel-amount">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-fuel-amount"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#at-airport">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#at-airport"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/airportns#airport">
+<j.1:has-weather rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foggy</j.1:has-weather>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#med-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#med-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#high-fuel-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#high-fuel-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#collision-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#collision-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-fuel-capacity">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-fuel-capacity"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#stop-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#stop-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#weather-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#weather-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-direction">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-direction"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#visibility-risk">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#visibility-risk"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#unload-fuel-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#unload-fuel-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#tell-plane-to-turn-right-action">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#tell-plane-to-turn-right-action"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#move-plane-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#move-plane-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#has-speed">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#has-speed"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#reload-fuel-mitigation">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#reload-fuel-mitigation"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#keep-calm-and-quiet">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#keep-calm-and-quiet"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#wont-collide">
+<rdf:type rdf:resource="http://www.usc.edu/vehiclens#wont-collide"/>
+</rdf:Description>
+<rdf:Description rdf:about="http://www.usc.edu/vehiclens#Plane AA93">
+<j.0:at-airport rdf:resource="http://www.usc.edu/airportns#airport"/>
+<j.0:has-fuel-capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</j.0:has-fuel-capacity>
+<j.0:has-direction rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.0</j.0:has-direction>
+<j.0:has-speed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</j.0:has-speed>
+<j.0:on-way rdf:resource="http://www.usc.edu/airportns#Runway R2"/>
+</rdf:Description>
+</rdf:RDF>
+>>>>>>> .r2291

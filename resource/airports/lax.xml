@@ -1,0 +1,158 @@
+<airport name="LAX">
+
+	<Taxiway>
+		<Name>BB</Name>
+		<X>150</X>
+		<Y>225</Y>
+		<Length>275</Length>
+		<Width>30</Width>
+		<Angle>95</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+
+	<Taxiway>
+		<Name>AA</Name>
+		<X>300</X>
+		<Y>225</Y>
+		<Length>275</Length>
+		<Width>30</Width>
+		<Angle>110</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+
+	
+	<Taxiway>
+		<Name>Z</Name>
+		<X>450</X>
+		<Y>225</Y>
+		<Length>275</Length>
+		<Width>30</Width>
+		<Angle>110</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+	
+	<Taxiway>
+		<Name>Y</Name>
+		<X>600</X>
+		<Y>225</Y>
+		<Length>280</Length>
+		<Width>30</Width>
+		<Angle>65</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+	
+	<Taxiway>
+		<Name>W</Name>
+		<X>750</X>
+		<Y>225</Y>
+		<Length>280</Length>
+		<Width>30</Width>
+		<Angle>65</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+	
+	<Taxiway>
+		<Name>V</Name>
+		<X>950</X>
+		<Y>225</Y>
+		<Length>280</Length>
+		<Width>30</Width>
+		<Angle>85</Angle>
+		<ConnectsToWay>24R</ConnectsToWay>
+		<ConnectsToWay>6R</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+	</Taxiway>
+
+	<Taxiway>
+		<Name>E</Name>
+		<X>500</X>
+		<Y>350</Y>
+		<Length>950</Length>
+		<Width>30</Width>
+		<Angle>0</Angle>
+		<ConnectsToWay>BB</ConnectsToWay>
+		<ConnectsToWay>AA</ConnectsToWay>
+		<ConnectsToWay>Z</ConnectsToWay>
+		<ConnectsToWay>Y</ConnectsToWay>
+		<ConnectsToWay>W</ConnectsToWay>
+		<ConnectsToWay>V</ConnectsToWay>
+		<ConnectsToGate>G3</ConnectsToGate>
+		<ConnectsToGate>S6</ConnectsToGate>
+	</Taxiway>
+	
+	<Runway>
+		<Special />
+		<Name>24R</Name>
+		<X>550</X>
+		<Y>100</Y>
+		<Length>850</Length>
+		<Width>45</Width>
+		<Angle>0</Angle>
+		<ConnectsToWay>BB</ConnectsToWay>
+		<ConnectsToWay>AA</ConnectsToWay>
+		<ConnectsToWay>Z</ConnectsToWay>
+		<ConnectsToWay>Y</ConnectsToWay>
+		<ConnectsToWay>W</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+		<ConnectsToWay>V</ConnectsToWay>
+	</Runway>
+
+	<Runway>
+		<Name>6R</Name>
+		<X>550</X>
+		<Y>250</Y>
+		<Length>850</Length>
+		<Width>45</Width>
+		<Angle>0</Angle>
+		<ConnectsToWay>BB</ConnectsToWay>
+		<ConnectsToWay>AA</ConnectsToWay>
+		<ConnectsToWay>Z</ConnectsToWay>
+		<ConnectsToWay>Y</ConnectsToWay>
+		<ConnectsToWay>W</ConnectsToWay>
+		<ConnectsToWay>E</ConnectsToWay>
+		<ConnectsToWay>V</ConnectsToWay>
+	</Runway>
+
+
+	<Gate>
+		<Name>G3</Name>
+		<X>900</X>
+		<Y>350</Y>
+		<Angle>0</Angle>
+	</Gate>
+	
+	
+	<Gate>
+		<Name>S6</Name>
+		<X>500</X>
+		<Y>350</Y>
+		<Angle>0</Angle>
+	</Gate>
+	
+	
+	<Hangar>
+		<Name>G3</Name>
+		<X>900</X>
+		<Y>430</Y>
+		<Angle>0</Angle>
+	</Hangar>
+	
+	
+	<Hangar>
+		<Name>S6</Name>
+		<X>500</X>
+		<Y>430</Y>
+		<Angle>0</Angle>
+	</Hangar>	
+	
+</airport>

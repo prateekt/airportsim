@@ -1,0 +1,258 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>Data:</title>
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal>//Prateek Tandon</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Data:</p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>ENUM PilotState = {RequestClearance, ClearanceGranted, RequestPushback,
+ClearToPushBack, MustContactLC, RequestTakeOff, Holding, TakeOff, TakenOff}</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>            ClearanceDelivery myCD = [Hacked connection to
+clearance delivery agent]</p>
+
+<p class=MsoNormal>            GroundControl myGC = [Hacked connection to
+Ground control agent]</p>
+
+<p class=MsoNormal>            Queue&lt;String&gt; directions</p>
+
+<p class=MsoNormal>            Queue&lt;EchoCommand&gt; commandsToEcho;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Messages:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgClearanceGranted(ClearanceAgent
+ca, string runway, string radiofrequency, int transponderCode) {</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            state
+= clearanceGranted;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            commandsToEcho.add(new
+EchoCommand(“Clearance Granted”, ca));</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgHereIsMode(ClearanceAgent
+ca, String guidancemode, char letter) {</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            state
+= requestPushback;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>commandsToEcho.add(new EchoCommand(“Mode: ” + guidanceMode +
+“, letter: “ + letter, ca));</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgPushBackGranted(GroundControl
+gc, string gate)  {</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            status
+= clearToPushback;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>commandsToEcho.add(new EchoCommand(“Push back granted: “ +
+destGate, ca));</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgHereAreInstructions(GroundControl
+gc, Array&lt;string&gt; instructions) {</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            directions.addAll(instructions);</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            status
+= MustContactLC</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>commandsToEcho.add(new EchoCommand(“Instructions: “ +
+stringify(instructions), ca));</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgPositionAndHold(LocalAgent
+la) {</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            status
+= Holding;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            commandsToEcho.add(new
+EchoCommand(“Position and Hold”, la));</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgClearedForTakeOff()
+{</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            status
+= TakeOff;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            commandsToEcho.add(new
+EchoCommand(“Cleared for Takeoff”), myLC);</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>msgGoodBye()
+{</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            status
+= TakenOff;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            commandsToEcho.add(new
+EchoCommand(“Good Bye”), myLC);</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Scheduler:</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>If(status =
+RequestClearance)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            RequestClearance()</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>ElseIf(status
+= GuidanceClear)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            RequestPushBack()</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>ElseIf(status
+= ClearToPushBack)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            PushBack()</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Else
+if(status = MustContactLC)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            contactLC()</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Else
+if(status==TakenOff)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            TakeOff()</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Actions:</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>requestClearance()
+{</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>myCD.requestClearance(this, flight.getPlaneName(),
+flight.getPlaneGate(), flight.getDestination());</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>state = AWAITING_RESPONSE;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>requestPushBack() 
+{</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            myCD.msgRequestPushBack(this,
+flight.getCurrentGate());</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            state
+= AWAITING_RESPONSE;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>Pushback()
+{</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            myCd.msgTaxiComplete(this,
+flight.getCurrentLocation());</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>contactLC()
+{</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            myLC.msgImOnRunway(this,
+flight.getRunway());</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            state
+= AWAITING_RESPONSE;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>}</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal>TakeOff() {</p>
+
+<p class=MsoNormal style='text-indent:.5in'>//draw take off animation</p>
+
+<p class=MsoNormal style='text-indent:.5in'>State = TAKEN_OFF;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

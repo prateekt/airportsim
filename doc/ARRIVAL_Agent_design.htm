@@ -1,0 +1,894 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="ARRIVAL_Agent_design_files/filelist.xml">
+<link rel=Edit-Time-Data href="ARRIVAL_Agent_design_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Pilot Agent</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Prateek Tandon</o:Author>
+  <o:LastAuthor>Prateek Tandon</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>116</o:TotalTime>
+  <o:Created>2008-04-01T01:49:00Z</o:Created>
+  <o:LastSaved>2008-04-01T01:49:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1083</o:Words>
+  <o:Characters>6177</o:Characters>
+  <o:Company>University of Southern California</o:Company>
+  <o:Lines>51</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7246</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("ARRIVAL_Agent_design_files/header.htm") fs;
+	mso-footnote-continuation-separator:url("ARRIVAL_Agent_design_files/header.htm") fcs;
+	mso-endnote-separator:url("ARRIVAL_Agent_design_files/header.htm") es;
+	mso-endnote-continuation-separator:url("ARRIVAL_Agent_design_files/header.htm") ecs;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal>//Prateek Tandon</p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal align=center style='text-align:center'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:6in;
+ height:438pt'>
+ <v:imagedata src="ARRIVAL_Agent_design_files/image001.jpg" o:title="Arrival"/>
+</v:shape><![endif]--><![if !vml]><img width=576 height=584
+src="ARRIVAL_Agent_design_files/image002.jpg" v:shapes="_x0000_i1025"><![endif]><br
+clear=all style='page-break-before:always'>
+Pilot Agent: Arrival Scenario</p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Data<o:p></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>String planeName; //name of plane
+the Pilot is commanding</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Map&lt;double, ATC&gt; radio; //A
+mapping of the radio frequencies to the Agents sitting on </p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-align:justify'><span
+style='mso-spacerun:yes'>        </span>those radio frequencies. The Pilot
+knows about these from the<span style='mso-spacerun:yes'>    </span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-align:justify'><span
+style='mso-spacerun:yes'>        </span>onset of the program.</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>Queue&lt;String&gt; directions;
+//route directions given by ATCs that the pilot must </p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+.5in'><span style='mso-spacerun:yes'>         </span>follow. Once the pilot
+finishes following these directions,</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+.5in'><span style='mso-spacerun:yes'>         </span>he is DONE.</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>PilotState state = {AWAITING_RESPONSE,
+FLYING, SAW_RUNWAY, CLEARED_TO_LAND, MUST_CONTACT_GROUND, NAVIGATING_ROUTE,
+DONE}</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>LocalControlAgent myLC = [Hacked
+connection to local controller];</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>//represents a command the pilot
+must echo to a given ATC</p>
+
+<p class=MsoNormal style='text-align:justify'>class EchoedCommand {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>String
+command; //command to echo</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'>ATC replyTo;
+//agent who echo must be sent to; ATC is a base interface that all ATCs should
+implement.</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>Queue&lt;EchoedCommand&gt;
+commandsToEcho; //fifo queue for echoing commands.</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>GroundControlAgent myGC = null;
+//refers to the ground controller assigned to the Pilot</p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Messages</u></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>msgISeeARunway(String runway) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>state
+= SAW_RUNWAY;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>directions.add(runway);</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>msgClearedToLand(LocalControlAgent
+lc, String windCondition) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>state
+= CLEARED_TO_LAND;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>commandsToEcho.enqueue(new<span
+style='mso-spacerun:yes'>  </span>EchoedCommand(“Cleared To Land, Wind</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'>Condition:
+“ + windCondition, lc));</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>msgPleaseContactGround(LocalControlAgent
+lc, double<span style='mso-spacerun:yes'>  </span>frequency,
+ArrayList&lt;String&gt; additionalDirections) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>state
+= MUST_CONTACT_GROUND;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>myGC =
+(GroundControlAgent) radio.get(frequency);</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>directions.addAll(additionalDirections);</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>commandsToEcho.enqueue(new<span
+style='mso-spacerun:yes'>  </span>EchoedCommand(“Must Contact<span
+style='mso-spacerun:yes'>  </span>Ground, </p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify'>Frequency: “ +
+frequency + “ and also do all this: ” + stringify(additionalDirections))); </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>msgUseThisRoute(GroundControlAgent
+gc, ArrayList&lt;String&gt; routePoints) {</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>state =
+NAVIGATING_ROUTE;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>commandsToEcho.enqueue(new<span
+style='mso-spacerun:yes'>  </span>EchoedCommand(“Must use this route: ”</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify'>+
+stringify(routePoints))); </p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>directions.addAll(routePoints)</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Scheduler</u></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>If(state==DONE) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>Return
+true; //do nothing</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'>Else If(commandsToEcho.size()
+&gt; 0) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>echoCommand(echoCommand.remove());
+//echo first command on queue</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>return
+true;</p>
+
+<p class=MsoNormal style='text-align:justify'>} else {</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>if(state==SAW_RUNWAY)
+{</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span><span
+style='mso-tab-count:1'>            </span>requestToLand();</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>return
+true;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>else
+if(state==MUST_CONTACT_GROUND) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span><span
+style='mso-tab-count:1'>            </span>contactGround()</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>return<span
+style='mso-spacerun:yes'>  </span>true;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>else
+if(state==NAVIGATING_ROUTE) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span><span
+style='mso-tab-count:1'>            </span>navigateRoute()</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>return
+true;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'>Return<span
+style='mso-spacerun:yes'>  </span>return;</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Actions</u></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>requestToLand() {</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>approachType =
+[Determine approach type, maybe hardcode for this version as </p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'>“VISUAL
+APPROACH”]</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>myLC.msgReadyToLand(this,
+planeName, approachType, directions.top());</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>state =
+AWAITING_RESPONSE;</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>contactGround() {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>myGC.msgHelloGround(this,
+planeName, directions.top()); </p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>state
+= AWAITING_RESPONSE;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>navigateRoute()<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>if(directions.size()&lt;=0)
+{</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>state
+= DONE;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>else {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>Direction<span
+style='mso-spacerun:yes'>  </span>d = directions.dequeue();</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>//place
+holder for doing stuff with directions</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>//when
+we hook this up to planes, it should</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>//actually
+do something on the plane positions.</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>echoCommand(EchoCommand ec) {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>ec.replyTo.msgEchoCommand(this,
+ec.command);</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>if(state!=MUST_CONTACT_GROUND)
+{</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:2'>                        </span>state=
+AWAITING_RESPONSE;</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'>stateChanged();</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'>LocalControlAgent:
+Arrival Scenario</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Data<o:p></o:p></u></p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal>private static final double GC_FREQUENCY<span
+style='mso-spacerun:yes'>  </span>= 1.11;</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class LandingRequest {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+planeName;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+approachType;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+runway;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class GroundControlTranfer {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;<span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class CommandVerification {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+echoedCommand;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Queue&lt;LandingRequest&gt; landingRequests; //fifo queue
+for landing requests</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Queue&lt;GroundControlTransfers&gt; gcTransfers; //fifo
+queue for transferring pilots to g.c.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Collection&lt;CommandVerification&gt; cmdsToVerify;
+//collection of echoed commands </p>
+
+<p class=MsoNormal style='text-indent:.5in'>from pilot. Used to determine
+whether pilot understands what is going on. If the </p>
+
+<p class=MsoNormal style='margin-left:.5in'>pilot is on track, we<span
+style='mso-spacerun:yes'>  </span>can keep giving him commands according to the
+protocol.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Map&lt;Pilot, String&gt; commandsGiven //mapping of pilot to
+last direction given each pilot</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Messages</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>msgReadyToLand(PilotAgent pilot, String planeName, String
+approachType, String runway) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>landingRequests.enqueue(new
+LandingRequest(pilot, planeName, approachType, </p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'>runway);</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>stateChanged();</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>msgEchoCommand(PilotAgent pilot, String echoCommand){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>cmdsToVerify(new<span
+style='mso-spacerun:yes'>  </span>CommandVerification(pilot, echoCommand));</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>stateChanged();<span
+style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Scheduler<o:p></o:p></u></p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal>If(cmdsToVerify.size() &gt; 0)<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>verifyCommand(cmdsToVerify.
+dequeue ());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return
+true;</p>
+
+<p class=MsoNormal>Else if(gcTransfers.size() &gt;0) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>doTransfer(gcTransfers.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return
+true;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>Else if(landingRequests.size() &gt; 0) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>handleLandingRequest(landingRequests.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return
+true;<br>
+}</p>
+
+<p class=MsoNormal>Else<span style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>Return
+false;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Actions</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>verifyCommand(CommandVerification cv) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+lastCommand = commandsGiven.get(cv.pilot);<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>if(cv.echoedCommand.equals(lastCommand))<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:2'>                        </span>if(cv.indexOf(“Cleared
+To Land”)) {</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='mso-tab-count:1'>            </span>//time to transfer pilot over to gc</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='mso-tab-count:1'>            </span>gcTransfers.enqueue(new
+GroundControlTransfer(cv.pilot));</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='mso-tab-count:1'>            </span>stateChanged();</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'>}</p>
+
+<p class=MsoNormal><span style='mso-tab-count:3'>                                    </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal style='text-indent:.5in'>Else {</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//placeholder</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//risk
+of collision, GENERATE A RISK</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>doTransfer(GroundControlTransfer gct) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//compute
+additional directions, for this version just return blank ArrayList</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>ArrayList&lt;String&gt;
+directions = new ArrayList&lt;String&gt;();</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>gct.pilot.msgPleaseContactGround(this,
+GC_FREQUENCY, directions);</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>commandsGiven.put(gct.pilot,
+“Must Contact<span style='mso-spacerun:yes'>  </span>Ground, </p>
+
+<p class=MsoNormal style='margin-left:1.0in'>Frequency: “ + GC_FREQUENCY + “
+and also do all this: ” + stringify(directions));</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>handleLandingRequest(LandingRequest lr){</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//Figure
+out what wind condition is, hardcoded for now</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+windCondition = “LOW WIND”;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>lrt.pilot.msgClearedToLand(this,
+windCondition); </p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>commandsGiven.put(gct.pilot,
+“Cleared To Land, Wind Condition: “ + </p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-indent:.5in'>windCondition);</p>
+
+<p class=MsoNormal>}</p>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=center style='text-align:center'>GroundControlAgent:
+Arrival Scenario</p>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Messages<o:p></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>msgHelloGround(PilotAgent
+pilot,<span style='mso-spacerun:yes'>  </span>String<span
+style='mso-spacerun:yes'>  </span>planeName, String currentAction)</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>msgEchoCommand(PilotAgent pilot,
+String echoedCommand)</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><u>Data<o:p></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'><u><o:p><span style='text-decoration:
+ none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal style='text-align:justify'>class GuidanceRequest {</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>String
+planeName;</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='mso-tab-count:1'>            </span>String
+currentAction;</p>
+
+<p class=MsoNormal style='text-align:justify'>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Class CommandVerification {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>PilotAgent
+pilot;</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+echoedCommand;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'>Queue&lt;GuidanceRequest&gt;
+guidanceRequests; //requests by pilots for ground control </p>
+
+<p class=MsoNormal style='margin-left:2.5in;text-align:justify;text-indent:
+.5in'><span style='mso-spacerun:yes'>    </span>Guidance</p>
+
+<p class=MsoNormal>Collection&lt;CommandVerification&gt; cmdsToVerify;
+//collection of echoed commands </p>
+
+<p class=MsoNormal style='text-indent:.5in'>from pilot. Used to determine
+whether pilot understands what is going on. If the </p>
+
+<p class=MsoNormal style='margin-left:.5in'>pilot is on track, we<span
+style='mso-spacerun:yes'>  </span>can keep giving him commands according to the
+protocol.</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Map&lt;Pilot, String&gt; commandsGiven //mapping of pilot to
+last direction given each pilot</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Scheduler<o:p></o:p></u></p>
+
+<p class=MsoNormal><u><o:p><span style='text-decoration:none'>&nbsp;</span></o:p></u></p>
+
+<p class=MsoNormal>If(cmdsToVerify.size() &gt; 0)<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>verifyCommand(cmdsToVerify.
+dequeue ());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return
+true;</p>
+
+<p class=MsoNormal>Else if(guidanceRequests.size() &gt;0) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>giveDirections(gcTransfers.dequeue());</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>return
+true;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal>Else {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>Return
+false;</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><u>Actions</u></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>verifyCommand(CommandVerification cv) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>String
+lastCommand = commandsGiven.get(cv.pilot);<span style='mso-tab-count:1'>    </span></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>if(cv.echoedCommand.equals(lastCommand))<span
+style='mso-spacerun:yes'>  </span>{</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//we’re
+okay, pilot echoed as expected</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}<span style='mso-tab-count:2'>                      </span></p>
+
+<p class=MsoNormal style='text-indent:.5in'>Else {</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//placeholder</p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='mso-tab-count:1'>            </span>//risk
+of collision, GENERATE A RISK</p>
+
+<p class=MsoNormal style='text-indent:.5in'>}</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>giveDirections(GuidanceRequest gr) {</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>//compute
+additional directions, for this version just return blank ArrayList</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>ArrayList&lt;String&gt;
+directions = new ArrayList&lt;String&gt;();</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>gct.pilot.msgUseThisRoute(this,
+directions);</p>
+
+<p class=MsoNormal style='text-align:justify;text-indent:.5in'>commandsGiven.put(gct.pilot,
+“Must use this route: ”</p>
+
+<p class=MsoNormal style='margin-left:1.0in'>+ stringify(directions));</p>
+
+<p class=MsoNormal>}</p>
+
+<p class=MsoNormal style='text-align:justify'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<html>
+<title> Login Design</title>
+<body>
+Andrew Tio</br>
+FAA Project</br>
+
+<b>******************LoginAgent*********************</b>
+</br>
+</br>
+<b>DATA</b></br>
+</br>
+
+Class NewUser-</br>
+	String uname</br>
+	String pword</br>
+//Simply used as an object to hold passed information in a list in case multiple users are signing onto the system.
+</br>
+
+LinkedList <NewUser> loggingInUsers </br>
+//List of NewUsers that are trying to login</br>
+</br>
+
+LinkedList <NewUser> addingUsers </br>
+//List of NewUsers that are trying to register</br>
+</br>
+
+LinkedList <ChangingPassUsers> passChangingUsers</br>
+//List of Users trying to change their password.</br>
+</br>
+
+LoggingAgent logger</br>
+//Must know about the LoggingAgent to send messages</br>
+</br>
+
+String name</br>
+//has a name for easy to read output</br>
+
+</br>
+<b>Messages</b></br>
+</br>
+msgWantToLogin(String username, String password)
+//msg called by button in gui that will send username and password textfield strings to this </br>
+//LoginAgent.  Will then create a NewUser out of the information and add it to the list </br>
+//loggingInUsers</br>
+</br>
+
+msg WantToRegister(String username, String password)</br>
+//msg called by the button in gui "Register" that will send username and password </br>
+//textfield strings to this LoginAgent.  Will then create a UserSchema out of the Personnel </br>
+//file that is passed out of the information and add it to the list of addingUsers</br>
+</br>
+
+msgWantToChangePassword(String username, String oldPassword, String newPassword, String confirmNewPassword)</br>
+//msg called by the change password button.</br>
+</br>
+
+msgWantToDelete(String username)</br>
+//adds username to a list of users being deleted</br>
+</br>
+
+<b>Scheduler</b></br>
+if(!loggingInUsers.isEmpty())</br>
+//Do action lookup()</br>
+</br>
+
+if(!addingUsers.isEmpty())</br>
+//Do action addUser()</br>
+</br>
+
+if(!deletingUsers.isEmpty())</br>
+//Do action deleteUser</br>
+</br>
+
+if(!passChangingUsers.isEmpty())</br>
+//Do action changePass()</br>
+</br>
+
+<b>Actions</b></br>
+void lookup(String username, String password)</br>
+//calls Database.findUser(username, Password) to check to see if user is in the database.  </br>
+//The database will return a UserSchema.  A new type of user is then created depending on </br>
+//the type.</br>
+</br>
+
+boolean addUser(String username, String password)</br>
+//returns whether addition is a success or not.</br>
+</br>
+
+void changePass(String username, String oldPassword, String newPassword)</br>
+//calls Database.changePassword(username,oldPassword, newPassword)</br>
+//will send to gui whether the password change worked or not.</br>
+</br>
+
+void deleteUser(String username)</br>
+//calls Database.removeUser().  Will delete the user with the corresponding username from</br>
+//the database</br>
+</br>
+
+void giveGuiList()</br>
+//passes a list of the users in the database by calling Database.getUserList().</br>
+</br>
+
+String translateToString(char[] input)</br>
+//this function takes the passed in char Array from the gui and converts it to a string.</br>
+</br>
+
+</body>
+</html>

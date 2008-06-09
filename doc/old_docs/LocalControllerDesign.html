@@ -1,0 +1,66 @@
+<html>
+<title>LocalControllerDesign</title>
+<body>
+Andrew Tio</br>
+FAA Control</br>
+</br>
+<b>**********LocalControllerAgent************</b></br>
+</br>
+<b>Data</b></br>
+private static LocalControllerAgent lc = new LocalControllerAgent("LocalController");</br>
+private String name;</br>
+private GroundControllerAgent gc= GroundControllerAgent.getInstance();</br>
+private Map<String,Boolean> runwayStatus = new TreeMap<String, Boolean>();//used to lock the runway</br>
+WorldState worldState;</br>
+private List<Plane> landingPlanes= new LinkedList<Plane>();</br>
+private List<Plane> departingPlanes= new LinkedList<Plane>();</br>
+</br>
+	
+<b>Messages</b></br>
+synchronized public void msgPlaneWantsToLand(Plane incomingPlane)</br>
+//message from the pilot telling the local controller he wants to land</br>
+Do(incomingPlane+ " wants to land");</br>
+landingPlanes.add(incomingPlane);</br>
+</br>
+	
+synchronized public void msgPlaneDeparting(Plane leavingPlane)</br>
+//message from GroundController telling Local controller that a plane wants to depart</br>
+Do(leavingPlane+ " ready to depart");</br>
+departingPlanes.add(leavingPlane);</br>
+</br>
+
+<b>Scheduler</b></br>
+if(!landingPlanes.isEmpty())</br>
+//if there are planes wanting to land, land the plane</br>
+landPlane(landingPlanes.get(0));</br>
+</br>
+
+if(!departingPlanes.isEmpty())</br>
+//if there are planes wanting to depart, tell them to depart
+tellPlaneDepart(departingPlanes.get(0));</br>
+</br>
+	
+<b>Actions</b></br>
+synchronized private void landPlane(Plane incomingPlane)</br>
+worldState = RealWorld.getInstance().getCurrentState();</br>
+//Get runways and the current state from the worldState</br>
+Map<String, Runway> runways = worldState.getRunways();</br>
+//loop to find the best runway</br>
+//lookup corresponding runway in map runwayStatus.  if this runway is false, meaning it is not locked, lock it and 
+
+</br>
+//let plane land.</br>
+//else tell plane to wait</br>
+</br>
+	
+synchronized private void tellPlaneDepart(Plane leavingPlane)</br>
+//get the status of the runways from the wordstate</br>
+worldState = RealWorld.getInstance().getCurrentState();</br>
+Map<String, Runway> runways = worldState.getRunways();</br>
+//find the worst runway.  check to see if the runway is locked. if it isnt, lock the runway and then let the plane 
+
+depart	</br>
+//else tell plane to wait</br>
+</br>
+</body>
+</html>
