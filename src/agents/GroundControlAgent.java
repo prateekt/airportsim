@@ -31,7 +31,6 @@ public class GroundControlAgent extends ATCAgent implements GroundControl {
 	 */
 	public boolean pickAndExecuteAnAction() {
 
-
 		//ARRIVAL SCHEDULING CODE////////////////////////////////
 
 		//check if there are arrivals
@@ -148,6 +147,7 @@ public class GroundControlAgent extends ATCAgent implements GroundControl {
 		//create a new ArrivalMediator object
 
 		Flight flight = new Flight(gate,null,null,Flight.FlightType.Arrival);
+
 		ArrivalMediator arrival = new ArrivalMediator(flight);
 		arrival.setStatus(ArrivalMediator.ArrivalStatus.Landed);
 
@@ -183,8 +183,6 @@ public class GroundControlAgent extends ATCAgent implements GroundControl {
 		stateChanged();
 
 	}
-
-
 
 
 	/**
