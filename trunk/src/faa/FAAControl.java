@@ -16,12 +16,12 @@ public class FAAControl {
 	 * Instance of SpeakerEngine
 	 */
 	private static SpeakerEngine seInstance;
-	
+
 	/*
 	 * Instance of Speech recognition engine
 	 */
 	private static SpeechRecognitionEngine srInstance;
-	
+
 	/*
 	 * Define SpeakerEngine as singleton for the FAA simulation.
 	 */
@@ -42,7 +42,7 @@ public class FAAControl {
 		return srInstance;
 	}
 
-	
+
 	public FAAControl() {
 		//start the auxilary agents
 		LoggingAgent.getInstance().startThread();
@@ -50,12 +50,17 @@ public class FAAControl {
 		LoginAgent.getInstance().startThread();
 		getSpeakerEngine().setVoiceOn(false);
 		getSpeakerEngine().startThread();
-		
+
 		gui = new GUI();
 
 		TheSimulator.getInstance().setGUI(gui);
 		TheSimulator.getInstance().start();
-		new Thread(getSpeechRecognitionEngine()).start();
+
+		boolean speechRecognitionEnabled = false;
+
+		if (speechRecognitionEnabled) {
+			new Thread(getSpeechRecognitionEngine()).start();
+		}
 
 	}
 
@@ -66,56 +71,9 @@ public class FAAControl {
 	}
 
 	public static void main(String[] args) {
-		
+
 		FAAControl control = new FAAControl();
 		control.run();
-
-
-/*
-		TheSimulator.getInstance().setRunning(true,false);
-		TheSimulator.getInstance().setGUI(gui);
-		TheSimulator.getInstance().start();
-
-		try {
-			ScenarioParser p = new ScenarioParser();
-			p.load("resource/scenario.xml");
-
-			List<PilotAgent> pilots = p.getPilots();
-			LocalControlAgent la = p.getLocalControlAgent();
-			GroundControlAgent gc = p.getGroundControlAgent();
-			ClearanceAgent ca = p.getClearanceAgent();
-
-			gui.setAirport(p.getAirport());
-
-			la.startThread();
-			gc.startThread();
-			ca.startThread();
-
-			Timer timer = new Timer();
-
-			for(final PilotAgent pilot: pilots) {
-				pilot.setMyCD(ca);
-				pilot.setMyLC(la);
-				pilot.setMyGC(gc);
-				pilot.startThread();
-				final Flight flight = pilot.getFlight();
-				timer.schedule(new TimerTask() {
-					public void run() {
-						if (flight.getType() == Flight.FlightType.Departure) {
-							pilot.msgIWantToTakeOff(flight.getGate(),flight.getOrigin());
-						} else {
-							pilot.msgISeeARunway(flight.getWay());
-						}
-					}
-				},flight.getTime());
-			}
-
-
-		}
-		catch(Exception e)  {
-			e.printStackTrace();
-		}
-		*/
 	}
 
 	public void startControl(String username,String position,String scenario) {

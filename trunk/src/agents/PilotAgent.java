@@ -24,7 +24,8 @@ public class PilotAgent extends Agent implements Pilot {
 	 * Pilot possible states
 	 */
 	public enum PilotState
-	{AWAITING_RESPONSE,
+	{
+		AWAITING_RESPONSE,
 		FLYING,
 		SAW_RUNWAY,
 		CLEARED_TO_LAND,
@@ -39,7 +40,9 @@ public class PilotAgent extends Agent implements Pilot {
 		REQUEST_CLEARANCE,
 		CLEARANCE_GRANTED,
 		REQUEST_PUSHBACK,
-		CLEARED_TO_PUSHBACK, MUST_CONTACT_LC, HOLDING, REQUEST_TAKEOFF, TAKEOFF, TAKEN_OFF, INITIAL}
+		CLEARED_TO_PUSHBACK,
+		MUST_CONTACT_LC,
+		HOLDING, REQUEST_TAKEOFF, TAKEOFF, TAKEN_OFF, INITIAL}
 
 	/*
 	 * The name of the agent
@@ -206,7 +209,6 @@ public class PilotAgent extends Agent implements Pilot {
 		Do(msg,false);
 		TraceDB.getInstance().updateMessageTrace(myPair, myPair,msg);
 		state = PilotState.SAW_RUNWAY;
-//		directions.add(runway);
 		flight.setWay(runway);
 		stateChanged();
 	}
@@ -702,7 +704,7 @@ public class PilotAgent extends Agent implements Pilot {
 	 */
 	public void requestClearance() {
 		Do("I am requesting clearance.");
-		myCD.msgRequestingClearance(this, flight.getPlaneName(), flight.getGate(), flight.getDestination());
+		myCD.msgRequestingClearance(this, flight.getPlaneName(), flight.getGate(), flight.getWay());
 		state = PilotState.AWAITING_RESPONSE;
 	}
 

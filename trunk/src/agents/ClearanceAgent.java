@@ -13,52 +13,11 @@ import airport.objects.*;
 public class ClearanceAgent extends ATCAgent implements ClearanceDelivery {
 
 	/*
-	 * The clearance request models a request by a pilot for clearance.
-	 */
-	class ClearanceRequest{
-		Pilot pilot;
-		String planeName;
-		String gate;
-		String destination;
-
-		public ClearanceRequest(Pilot pilot, String planeName, String gate, String destination){
-			this.pilot = pilot;
-			this.planeName = planeName;
-			this.gate = gate;
-			this.destination = destination;
-		}
-
-		public Pilot getPilot(){
-			return pilot;
-		}
-
-		public String getPlaneName(){
-			return planeName;
-		}
-		public String getGate(){
-			return gate;
-		}
-		public String getDestination(){
-			return destination;
-		}
-	}
-
-	/*
-	 * The queue of clearance requests the clearance agent has.
-	 */
-	private Queue<ClearanceRequest> clearanceRequests;
-
-	public Queue<ClearanceRequest> getClearanceRequests() {
-		return clearanceRequests;
-	}
-	
-	/*
 	 * Constructor for Clearance Agent
 	 */
 	public ClearanceAgent(String name,Airport airport){
 		super(name,airport);
 		myPair = new AgentPair(name, AgentPair.AgentType.CLEARANCE_DELIVERY, voiceSemaphore);
-		clearanceRequests = new LinkedBlockingQueue<ClearanceRequest>();
 	}
 
 	// ----------------MESSAGES
@@ -71,11 +30,18 @@ public class ClearanceAgent extends ATCAgent implements ClearanceDelivery {
 	 * @param gate The gate where the pilot is at
 	 * @param destination Where the pilot must go
 	 */
-	public void msgRequestingClearance(Pilot pilot, String planeName, String gate, String destination){
-		Do("I'm " + pilot + ". Requesting clearance.",false);
-		TraceDB.getInstance().updateMessageTrace(myPair, pilot.getPair(), "I'm " + pilot + ". Requesting clearance.");
-		ClearanceRequest cr = new ClearanceRequest(pilot, planeName, gate, destination);
-		clearanceRequests.add(cr);
+	public void msgRequestingClearance(Pilot pilot, String planeName, String gate, String way){
+		Do("Pilot " + pilot + ". Requesting clearance.",false);
+		TraceDB.getInstance().updateMessageTrace(myPair, pilot.getPair(), "Pilot " + pilot + ". Requesting clearance.");
+
+		//create a new departuremediator
+		Flight flight = new Flight(gate,way,null,Flight.FlightType.Departure);
+		DepartureMediator departure = new DepartureMediator(flight);
+		departure.setStatus(DepartureMediator.DepartureStatus.RequestingClearance);
+
+		departures.put(pilot,departure);
+
+		pilots.put(flight,pilot);
 		stateChanged();
 	}
 
@@ -85,27 +51,40 @@ public class ClearanceAgent extends ATCAgent implements ClearanceDelivery {
 	 * Scheduler for Clearance Agent
 	 */
 	public boolean pickAndExecuteAnAction() {
-		
-		synchronized (commandsToVerify) {
-			if(commandsToVerify.size() > 0) {
-				Command c = commandsToVerify.remove();
-				if(verifyCommand(c)) {
-					if(c.getEchoType()==EchoType.CD_CLEARANCE_GRANTED) {
-						givePilotMode(c.getPilot());
+
+		if (doVerification()) return true;
+
+		synchronized (departures) {
+			if(departures.size() > 0){
+				for (DepartureMediator departure : departures.values()) {
+					if (departure.getStatus() == DepartureMediator.DepartureStatus.RequestingClearance) {
+						processRequest(departure);
 					}
 				}
 				return true;
 			}
 		}
 
-		synchronized (clearanceRequests) {
-			if(clearanceRequests.size() > 0){
-				processRequest(clearanceRequests.remove());
+		return  false;
+	}
+
+
+	private boolean doVerification() {
+		synchronized (commandsToVerify) {
+			if(commandsToVerify.size() > 0) {
+				Command c = commandsToVerify.remove();
+				if(verifyCommand(c)) {
+					if(c.getEchoType()==EchoType.CD_CLEARANCE_GRANTED) {
+						givePilotMode(c.getPilot());
+						departures.remove(c.getPilot());
+					}
+				}
 				return true;
 			}
 		}
 
-		return  false;
+		return false;
+
 	}
 
 	//--ACTIONS
@@ -115,20 +94,22 @@ public class ClearanceAgent extends ATCAgent implements ClearanceDelivery {
 	 *
 	 * @param cr The clearance request to process
 	 */
-	private void processRequest(ClearanceRequest cr) {
+	private void processRequest(DepartureMediator departure) {
 		//Hardcoded params for now
 		double  frequency = 1000;
 		int code = 89;
 
 		//get the flight associated with the pilot
-		Flight flight = cr.getPilot().getFlight();
+		Flight flight = departure.getFlight();
 
-		Do("Processing clearance request from " + cr.getPilot());
-		cr.getPilot().msgClearanceGranted(this, flight.getWay(), frequency, code);
+		Pilot pilot = pilots.get(flight);
+
+		Do("Processing clearance request from " + pilot);
+		pilot.msgClearanceGranted(this, flight.getWay(), frequency, code);
 
 		//Queue command to commands issued
 		String command = "Clearance Granted. Runway: " + flight.getWay() + ", frequency: " + frequency + ", Code: " + code;
-		issueCommand(cr.getPilot(),new Command(cr.getPilot(),command,EchoType.CD_CLEARANCE_GRANTED));
+		issueCommand(pilot,new Command(pilot,command,EchoType.CD_CLEARANCE_GRANTED));
 	}
 
 	/*

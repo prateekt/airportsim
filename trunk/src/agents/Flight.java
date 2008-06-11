@@ -8,7 +8,6 @@ package agents;
 public class Flight {
 	public enum FlightType { Arrival, Departure }
 
-
 	private FlightType type;
 	private String planeName;
 	private String gate;
