@@ -119,8 +119,8 @@ clean               Delete all the compiled files
 		<compilerarg value="-Xlint:unchecked"/>
 	</javac>
 
-	<copy file="${src}/voicerecognition1/hello.gram"
-	      todir="${build}/voicerecognition1/helloworld/"/>
+	<copy file="${src}/speech/hello.gram"
+	      todir="${build}/speech/helloworld/"/>
 
     
     </target>

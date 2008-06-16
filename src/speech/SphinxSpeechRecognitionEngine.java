@@ -1,6 +1,5 @@
-package voicerecognition1;
+package speech;
 
-import interfaces.SpeechRecognitionEngine;
 import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
@@ -13,6 +12,7 @@ import gui.*;
 import interfaces.*;
 import javax.swing.*;
 import java.awt.event.*;
+import faa.FAAControl;
 
 public class SphinxSpeechRecognitionEngine extends SpeechRecognitionEngine {
 
@@ -23,7 +23,7 @@ public class SphinxSpeechRecognitionEngine extends SpeechRecognitionEngine {
 	public SphinxSpeechRecognitionEngine(String configFile, GUI gui) {
 		this.gui = gui;
 		try {
-			File f = new File("src/voicerecognition1/helloworld.config.xml");
+			File f = new File("src/speech/helloworld.config.xml");
 	    	URL url = f.toURI().toURL();
 	        ConfigurationManager cm = new ConfigurationManager(url);
 	        recognizer = (Recognizer) cm.lookup("recognizer");
@@ -43,18 +43,24 @@ public class SphinxSpeechRecognitionEngine extends SpeechRecognitionEngine {
 	public void run() {
 		try {
 	        recognizer.allocate();
-	        if (microphone.startRecording()) {
-	        	while(true) {
-		        	Result result = recognizer.recognize();
-		            if (result != null) {
-		            	System.out.println("Say something.");
-		            	String resultText = result.getBestFinalResultNoFiller();
-		            	System.out.println("You said: " + resultText + "\n");
-		            	forwardToUserControlledAgent(resultText);
-		            }
-	        	}
-	        }
-		}
+	        setRecognitionOn(true);
+	        
+	        //main loop
+	        startRecording();
+	        while(true) {
+        		if(microphone.isRecording()) {	        		
+        			Result result = recognizer.recognize();
+        			if (result != null) {
+        				String resultText = result.getBestFinalResultNoFiller();
+        				if(!resultText.trim().equals("")) {
+            				System.out.println("You said: " + resultText + "\n");        					  			
+        					//forward to user-agent
+        					forwardToUserControlledAgent(resultText);
+        				}	
+        			}
+	            }
+        	}
+        }
 		catch(IOException e) {
             System.err.println("Problem when loading HelloWorld: " + e);
             e.printStackTrace();			
@@ -140,4 +146,23 @@ public class SphinxSpeechRecognitionEngine extends SpeechRecognitionEngine {
 			}
 		}
 	}
+
+	/**
+	 * Start recording.
+	 */
+	public void startRecording() {
+		microphone.startRecording();
+	}
+
+	/**
+	 * Start recording.
+	 */
+	public void stopRecording() {
+		microphone.stopRecording();
+	}
+	
+	public boolean isRecording() {
+		return microphone.isRecording();
+	}
+
 }
