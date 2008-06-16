@@ -7,7 +7,7 @@ import java.util.*;
 import airport.*;
 import airport.objects.*;
 import gui.*;
-import voicerecognition1.*;
+import speech.*;
 
 public class FAAControl {
 	static GUI gui = null;
@@ -48,7 +48,7 @@ public class FAAControl {
 		LoggingAgent.getInstance().startThread();
 		LoginAgent.getInstance().setFAAControl(this);
 		LoginAgent.getInstance().startThread();
-		getSpeakerEngine().setVoiceOn(false);
+		getSpeakerEngine().setVoiceOn(true);
 		getSpeakerEngine().startThread();
 
 		gui = new GUI();
@@ -56,7 +56,7 @@ public class FAAControl {
 		TheSimulator.getInstance().setGUI(gui);
 		TheSimulator.getInstance().start();
 
-		boolean speechRecognitionEnabled = false;
+		boolean speechRecognitionEnabled = true;
 
 		if (speechRecognitionEnabled) {
 			new Thread(getSpeechRecognitionEngine()).start();

@@ -56,23 +56,33 @@ public class TraceDB {
 
 		Semaphore voiceSemaphore = to.getVoiceSemaphore();
 		try {
-			if(voiceSemaphore.availablePermits()==0)
+			if(voiceSemaphore.availablePermits()==0) {
 				voiceSemaphore.release();
+			}
+
 			voiceSemaphore.acquire();
+			
 			if(from!=null && from.getType()==AgentPair.AgentType.PILOT) {
 				FAAControl.getSpeakerEngine().msgPleaseSpeak(content, voiceSemaphore, 0);
 			}
 			else if(from!=null && from.getType()==AgentPair.AgentType.LOCAL_CONTROL) {
 				FAAControl.getSpeakerEngine().msgPleaseSpeak(content, voiceSemaphore, 1);
 			}
+			else if(from!=null && from.getType()==AgentPair.AgentType.GROUND_CONTROL) {
+				FAAControl.getSpeakerEngine().msgPleaseSpeak(content, voiceSemaphore, 2);				
+			}
+			else if(from!=null && from.getType()==AgentPair.AgentType.CLEARANCE_DELIVERY) {
+				FAAControl.getSpeakerEngine().msgPleaseSpeak(content, voiceSemaphore, 3);				
+			}
 			else {
 				voiceSemaphore.release();
 			}
+			
 			voiceSemaphore.acquire();
 
-			if(voiceSemaphore.availablePermits()==0)
+			if(voiceSemaphore.availablePermits()==0) {
 				voiceSemaphore.release();
-
+			}
 		}
 		catch(Exception e) {
 			e.printStackTrace();

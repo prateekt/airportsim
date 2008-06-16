@@ -1,4 +1,4 @@
-package voicerecognition1;
+package speech;
 /*
  * Copyright 1999-2004 Carnegie Mellon University.
  * Portions Copyright 2004 Sun Microsystems, Inc.
