@@ -76,6 +76,8 @@ public class TracePanel extends JPanel {
 		AgentPair from = t.getFrom();
 		String content = t.getMessage();
 
+		if (to == null || from == null) return;
+
 		String color =  "#000000";
 		String type = "";
 

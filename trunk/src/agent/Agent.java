@@ -51,12 +51,11 @@ public abstract class Agent {
 		sb.append(getName());
 		sb.append(": ");
 		sb.append(msg);
-		sb.append("\n");
 		if (e != null) {
 			sb.append(StringUtil.stackTraceString(e));
 		}
 		String str = sb.toString();
-		System.out.print(str);
+		System.out.println(str);
 		return str;
 
 	}
