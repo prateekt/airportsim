@@ -6,11 +6,19 @@
 //  Copyright 2007 Riley Marsh. All rights reserved.
 //
 package airport;
-import airport.objects.*;
-
-import java.util.*;
-import java.io.*;
-import java.sql.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Database {
 

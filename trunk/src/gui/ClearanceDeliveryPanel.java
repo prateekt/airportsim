@@ -6,16 +6,17 @@ package gui;
  * @author John Baldo
  *******************/
 
-import javax.swing.*;
+import interfaces.Pilot;
 
-import java.awt.event.*;
-import javax.swing.event.*;
-import java.awt.*;
-import java.util.ArrayList;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import agents.*;
-import airport.objects.*;
-import interfaces.*;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import agents.UserClearanceAgent;
 
 public class ClearanceDeliveryPanel extends ATCPanel implements ActionListener {
 

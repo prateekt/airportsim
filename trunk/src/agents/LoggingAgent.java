@@ -8,11 +8,14 @@
 //
 package agents;
 
-import airport.*;
-import airport.objects.*;
+import java.util.Collections;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
-import java.util.*;
 import agent.Agent;
+import airport.Database;
+import airport.Log;
 
 public class LoggingAgent extends Agent{
 

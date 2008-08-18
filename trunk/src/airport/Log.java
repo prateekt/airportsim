@@ -7,8 +7,7 @@
 //
 
 package airport;
-import airport.objects.*;
-import java.util.*;
+import java.util.Date;
 
 public class Log {
 	Date logTime;

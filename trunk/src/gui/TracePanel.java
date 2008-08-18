@@ -8,12 +8,18 @@ package gui;
  * author: John Baldo
  */
 
-import guiIntegration.*;
+import guiIntegration.AgentPair;
+import guiIntegration.MessageData;
+import guiIntegration.TraceDB;
+import guiIntegration.TraceMessage;
 
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.util.*;
+
+import javax.swing.BoxLayout;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class TracePanel extends JPanel {
 
@@ -104,6 +110,14 @@ public class TracePanel extends JPanel {
 		String end = "</html></body>";
 		myMessages.append(messageText + "<br><br>");
 		myContent = head + myMessages.toString() + end;
+
+		//scroll to the bottom
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				traceBox.setCaretPosition(traceBox.getDocument().getLength());
+			}
+
+		});
 	}
 
 	public void update() {

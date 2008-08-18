@@ -1,10 +1,21 @@
 package airport;
 
-import airport.objects.*;
-import java.util.*;
-import java.util.concurrent.*;
-
 import gui.GUI;
+import gui.ExplosiveFactory;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
+import airport.objects.AirplaneActionCallback;
+import airport.objects.Airport;
+import airport.objects.Compass;
+import airport.objects.Gate;
+import airport.objects.Way;
 
 /**
  * This runs the simulations and dynamics of planes
@@ -156,7 +167,7 @@ public class TheSimulator extends Thread {
 			time += timeDelta;
 
 			//run the explosion machine!
-//			ExplosiveFactory.getInstance().update(timeDelta);
+			ExplosiveFactory.getInstance().update(timeDelta);
 
 			/*			if (scenario != null) {
 				//run the rain machine
@@ -226,7 +237,7 @@ public class TheSimulator extends Thread {
 								//	planesToKill.add(plane2);
 
 								//start an explosion!
-	//							ExplosiveFactory.getInstance().createExplosion((int)c1.getX(),(int)c1.getY());
+							ExplosiveFactory.getInstance().createExplosion((int)c1.getX(),(int)c1.getY());
 							} else {
 								//just warn them
 
@@ -465,7 +476,7 @@ public class TheSimulator extends Thread {
 			//the end conditions for land is when it slows down to zero
 			action.addProperty("endvelocity", new Double(0.0));
 
-			System.out.println("***DEBUG***: Landing... at "  + way.getName());
+			//System.out.println("***DEBUG***: Landing... at "  + way.getName());
 
 		} else if ("dock".equals(actionName)) {
 			//docking is simply like taxiing
@@ -480,11 +491,11 @@ public class TheSimulator extends Thread {
 			Gate gate = airport.getGate(gateName);
 
 			if (gate == null) {
-				System.out.println("Gate " + gate + " doesn\'t exist!");
+				//System.out.println("Gate " + gate + " doesn\'t exist!");
 				return false;
 			}
 
-			System.out.println("***DEBUG***: Docking ... at " + gateName);
+			//System.out.println("***DEBUG***: Docking ... at " + gateName);
 
 			//set the plane at a slow trotting place
 			//check if we have a velocity
@@ -516,7 +527,7 @@ public class TheSimulator extends Thread {
 
 			if (dot <= 0) {
 				//there is no way the plane can ever get close to this place
-				System.out.println("Dock - the plane is facing the incorrect direction! " + dot);
+				//System.out.println("Dock - the plane is facing the incorrect direction! " + dot);
 				return false;
 			}
 
@@ -594,7 +605,7 @@ public class TheSimulator extends Thread {
 			//set the acceleration
 			airplane.setAcceleration(0);
 
-			System.out.println("***DEBUG***: Taxiing towards compass: " + endpoint);
+			//System.out.println("***DEBUG***: Taxiing towards compass: " + endpoint);
 
 		} else if ("turntowards".equals(actionName)) {
 			//given an endpoint
@@ -637,7 +648,7 @@ public class TheSimulator extends Thread {
 				}
 			}
 
-			System.out.println("***DEBUG*** Turning towards " + endpoint);
+			//System.out.println("***DEBUG*** Turning towards " + endpoint);
 		} else if ("place".equals(actionName)) {
 
 			//we just put it someplace
@@ -675,7 +686,7 @@ public class TheSimulator extends Thread {
 				}
 
 				Compass endpoint = way.getEndpointCompass(waypoint);
-				System.out.println(endpoint);
+				//System.out.println(endpoint);
 				if (endpoint == null) {	//no such endpoint
 					return false;
 				}
@@ -690,7 +701,7 @@ public class TheSimulator extends Thread {
 			airplane.setAcceleration(0);
 
 		} else if ("takeoff".equals(actionName)) {
-			System.out.println("***DEBUG***: takeoff!");
+			//System.out.println("***DEBUG***: takeoff!");
 
 			//check if we have a velocity
 			Double velocity = (Double)action.getProperty("velocity");
@@ -707,7 +718,7 @@ public class TheSimulator extends Thread {
 			action.addProperty("endvelocity",new Double(MAX_TAKEOFF_VELOCITY));
 
 		} else if ("turn".equals(actionName)) {
-			System.out.println("Turning..");
+			//System.out.println("Turning..");
 			//ensure that we have an angle to turn through
 			Double angle = (Double)action.getProperty("angle");
 			if (angle == null) {
@@ -735,13 +746,13 @@ public class TheSimulator extends Thread {
 			//at this point we're assuming we have a valid angle, so we don't need to check
 			angle = (Double)action.getProperty("angle");
 			Double endangle = compass.getAngle() + angle;
-			//System.out.println(endangle);
+			////System.out.println(endangle);
 			//endangle = normalizeAngle(endangle);
 			action.addProperty("endangle",endangle);
 
 		} else if ("turninto".equals(actionName)) {
 
-			System.out.println("***DEBUG***: Turninto");
+			//System.out.println("***DEBUG***: Turninto");
 
 			Compass intersection;
 
@@ -879,7 +890,7 @@ public class TheSimulator extends Thread {
 			//check if it's within an epsilon range of the velocity
 			if (airplane.getVelocity() <= endvelocity) {
 				//aha!
-				System.out.println("Airplane " + airplane.getName() + " successfully landed!");
+				//System.out.println("Airplane " + airplane.getName() + " successfully landed!");
 				end = true;
 
 				//let's make sure the velocity and acceleration are 0
@@ -905,7 +916,7 @@ public class TheSimulator extends Thread {
 				//at this time the plane should be nearly parallel to the
 				//gate
 				end = true;
-				System.out.println("***DEBUG*** Plane docked");
+				//System.out.println("***DEBUG*** Plane docked");
 			} else {
 				//otherwise
 				action.addProperty("distancetogate",distance);

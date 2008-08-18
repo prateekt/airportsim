@@ -3,8 +3,8 @@ package airport;
 	Writen By: Eric Quillen
 */
 
-import java.util.*;
-import java.lang.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 // This class stores Personnel data.
 /** Stores all info pertaining to an employee.

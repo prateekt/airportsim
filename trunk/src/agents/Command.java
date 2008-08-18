@@ -1,6 +1,7 @@
 package agents;
-import java.util.HashMap;
 import interfaces.Pilot;
+
+import java.util.HashMap;
 
 /**
  * This is the data structure that is used for

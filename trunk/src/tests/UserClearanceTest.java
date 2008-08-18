@@ -1,14 +1,6 @@
 package tests;
 
-import interfaces.*;
-import agent.*;
-import agents.*;
-import airport.objects.*;
-
-import airport.mock.MockPilot;
 import junit.framework.TestCase;
-import agents.*;
-import airport.objects.*;
 
 
 /*

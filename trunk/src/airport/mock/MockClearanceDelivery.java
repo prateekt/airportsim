@@ -1,7 +1,8 @@
 package airport.mock;
-import interfaces.*;
-import agents.*;
-import guiIntegration.*;
+import guiIntegration.AgentPair;
+import interfaces.ClearanceDelivery;
+import interfaces.Pilot;
+import agents.EchoType;
 
 /*
  * Mock Clearance Delivery object for unit testing.

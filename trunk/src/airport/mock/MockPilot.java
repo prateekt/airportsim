@@ -1,12 +1,18 @@
 package airport.mock;
 
-import java.util.*;
+import guiIntegration.AgentPair;
+import interfaces.ClearanceDelivery;
+import interfaces.GroundControl;
+import interfaces.LocalControl;
+import interfaces.Pilot;
 
-import interfaces.*;
-import guiIntegration.*;
+import java.util.ArrayList;
+
 import agent.StringUtil;
-import agents.*;
-import airport.objects.*;
+import agents.EchoType;
+import agents.Flight;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
 
 /*
  * Mock object for unit testing.

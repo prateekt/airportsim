@@ -6,15 +6,19 @@ package gui;
  * @author John Baldo
  *******************/
 
-import javax.swing.*;
+import interfaces.Pilot;
 
-import java.awt.event.*;
-import java.awt.*;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import agents.*;
-import airport.objects.*;
-import interfaces.*;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import agents.UserGroundControlAgent;
+import airport.objects.AirplaneAction;
 
 public class GroundControlPanel extends ATCPanel implements ActionListener {
 

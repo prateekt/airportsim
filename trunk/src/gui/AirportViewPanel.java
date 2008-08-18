@@ -1,19 +1,37 @@
 package gui;
 
-import java.awt.*;
-import java.awt.geom.*;
-import java.awt.image.*;
-import java.awt.event.*;
-import java.io.File;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
+import java.awt.Shape;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
-import javax.imageio.*;
-import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.Scrollable;
+import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
-import airport.*;
-import airport.objects.*;
-
-import java.util.*;
+import airport.TheSimulator;
+import airport.objects.Airplane;
+import airport.objects.Airport;
+import airport.objects.AirportNode;
+import airport.objects.Compass;
+import airport.objects.Hangar;
+import airport.objects.Way;
 
 /**
  * @author Henry Yuen
@@ -149,7 +167,7 @@ public class AirportViewPanel extends JPanel implements Scrollable, ChangeListen
 
 
 		//display the explosives
-		//ExplosiveFactory.getInstance().paint(g2d,zoomFactor);
+		ExplosiveFactory.getInstance().paint(g2d,zoomFactor);
 
 		//rain god!
 		//Scenario scenario = SessionManager.getInstance().getCurrentScenario();

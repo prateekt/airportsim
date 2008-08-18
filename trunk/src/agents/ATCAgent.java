@@ -1,15 +1,32 @@
 package agents;
 
-import java.util.*;
-import java.util.concurrent.*;
+import guiIntegration.AgentPair;
+import guiIntegration.TraceDB;
+import interfaces.ATC;
+import interfaces.Pilot;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+import net.sourceforge.jsl.AStarSearch;
+import net.sourceforge.jsl.AbstractOpenClosedListSearch;
+import net.sourceforge.jsl.AbstractSearchNode;
+import net.sourceforge.jsl.SearchEdge;
+import net.sourceforge.jsl.SearchNode;
 import agent.Agent;
-import interfaces.*;
-import guiIntegration.*;
-
-import airport.*;
-import airport.objects.*;
-
-import net.sourceforge.jsl.*;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
+import airport.objects.AirportNode;
+import airport.objects.Compass;
+import airport.objects.Way;
 
 /**
  * This is the generic ATC base-class.

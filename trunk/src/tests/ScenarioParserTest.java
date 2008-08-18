@@ -1,16 +1,16 @@
 package tests;
 
-import guiIntegration.*;
-import interfaces.*;
+import guiIntegration.AgentPair;
+import interfaces.ClearanceDelivery;
+import interfaces.GroundControl;
+import interfaces.LocalControl;
 
-import java.util.*;
+import java.util.List;
 
-import agent.Agent;
+import junit.framework.TestCase;
 import agents.PilotAgent;
 import agents.ScenarioParser;
-import airport.*;
-import airport.objects.*;
-import junit.framework.TestCase;
+import airport.objects.Airport;
 
 /**
  * Tests the loading of XML scenario files, and airport files

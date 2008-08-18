@@ -1,13 +1,32 @@
 package faa;
 
-import interfaces.*;
+import gui.ClearanceDeliveryPanel;
+import gui.GUI;
+import gui.GroundControlPanel;
+import gui.LocalControlPanel;
+import interfaces.ClearanceDelivery;
+import interfaces.GroundControl;
+import interfaces.LocalControl;
+
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import speech.FreeTTSSpeakerEngine;
+import speech.SpeakerEngine;
+import speech.SpeechRecognitionEngine;
+import speech.SphinxSpeechRecognitionEngine;
 import agent.Agent;
-import agents.*;
-import java.util.*;
-import airport.*;
-import airport.objects.*;
-import gui.*;
-import speech.*;
+import agents.Flight;
+import agents.LoggingAgent;
+import agents.LoginAgent;
+import agents.PilotAgent;
+import agents.ScenarioParser;
+import agents.UserClearanceAgent;
+import agents.UserGroundControlAgent;
+import agents.UserLocalControlAgent;
+import airport.TheSimulator;
+import airport.objects.Airport;
 
 public class FAAControl {
 	static GUI gui = null;

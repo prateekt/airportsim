@@ -1,6 +1,6 @@
 package interfaces;
-import guiIntegration.*;
-import agents.*;
+import guiIntegration.AgentPair;
+import agents.EchoType;
 
 /*
  * @author  Prateek Tandon

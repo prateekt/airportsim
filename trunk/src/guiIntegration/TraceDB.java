@@ -1,9 +1,12 @@
 package guiIntegration;
 
-import java.util.*;
 import faa.FAAControl;
-import gui.*;
-import java.util.concurrent.*;
+import gui.TracePanel;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.Semaphore;
 
 /*
  * Object used to interface with trace gui components with CSCI 105.

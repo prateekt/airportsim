@@ -50,15 +50,19 @@ package gui;
  * @author Julian Vergel de Dios
  *******************/
 
-import javax.swing.*;
+import interfaces.Pilot;
 
-import java.awt.event.*;
-import java.awt.*;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import agents.*;
-import airport.objects.*;
-import interfaces.*;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import agents.UserLocalControlAgent;
+import airport.objects.AirplaneAction;
 
 public class LocalControlPanel extends ATCPanel implements ActionListener {
 

@@ -1,13 +1,18 @@
 package tests;
 
-import faa.FAAControl;
+import java.util.ArrayList;
+
 import junit.framework.TestCase;
-import airport.objects.*;
-import airport.TheSimulator;
-import agents.*;
+import agents.Flight;
+import agents.PilotAgent;
 import agents.PilotAgent.PilotState;
-import airport.mock.*;
-import java.util.*;
+import airport.TheSimulator;
+import airport.mock.MockClearanceDelivery;
+import airport.mock.MockGroundControl;
+import airport.mock.MockLocalControl;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
+import faa.FAAControl;
 
 
 public class PilotTest extends TestCase{

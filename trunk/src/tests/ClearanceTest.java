@@ -3,11 +3,11 @@ package tests;
 import junit.framework.TestCase;
 import agents.ClearanceAgent;
 import agents.Flight;
-import faa.FAAControl;
 import airport.mock.MockGroundControl;
 import airport.mock.MockLocalControl;
 import airport.mock.MockPilot;
 import airport.objects.Airport;
+import faa.FAAControl;
 
 /*
  * ===Patrick did an extremely good job on his unit tests. However, the API for the clearance

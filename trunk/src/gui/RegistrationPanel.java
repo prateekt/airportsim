@@ -3,16 +3,25 @@ package gui;
 	Writen By: Eric Quillen
 */
 
-import javax.swing.*;
-import javax.swing.event.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.*;
-import java.util.*;
-import java.io.*;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Map;
 
-import airport.*;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import agents.LoginAgent;
+import airport.Personnel;
 
 /** Employee Registration JPanel.
 *	@author Eric Quillen

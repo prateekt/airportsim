@@ -101,14 +101,22 @@ public class GUI extends JFrame {
 /*
 	Writen By: Eric Quillen
 */
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.*;
-import java.util.*;
-import java.io.*;
-import airport.*;
-import airport.objects.*;
+import java.awt.CardLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import airport.Database;
+import airport.Personnel;
+import airport.objects.Airplane;
+import airport.objects.Airport;
 
 // main gui. Sets up main window.
 /**
