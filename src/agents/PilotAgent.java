@@ -596,7 +596,7 @@ public class PilotAgent extends Agent implements Pilot {
 				Way planeWay = airplane.getWay();
 				Way specialWay = airport.getSpecialWay();
 
-				System.out.println("Test3");
+				//System.out.println("Test3");
 
 				if (planeWay == specialWay) {
 					state = PilotState.MUST_CONTACT_LC;

@@ -6,7 +6,7 @@ import java.awt.geom.*;
 import javax.swing.*;
 
 public class ExplosiveFactory {
-
+	private final static int MAX_EXPLOSIONS = 3;
 	private final static double DEFAULT_RATE = 0.001;
 	private static ExplosiveFactory instance = null;
 	private Image explosionImage;
@@ -37,6 +37,7 @@ public class ExplosiveFactory {
 			double scale = 1.0 + progress;
 
 			if (alpha > 1.0f) alpha = 1.0f;
+			if (alpha < 0) alpha = 0;
 
 			Composite comp = g2d.getComposite();
 			g2d.setComposite(
@@ -77,6 +78,8 @@ public class ExplosiveFactory {
 	}
 
 	public void createExplosion(int x,int y) {
+		if (explosions.size() > MAX_EXPLOSIONS) return;
+
 		Explosion exp = new Explosion();
 		exp.x = x;
 		exp.y = y;
