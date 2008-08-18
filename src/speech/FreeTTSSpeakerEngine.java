@@ -1,9 +1,11 @@
 package speech;
 
-import com.sun.speech.freetts.VoiceManager;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.Semaphore;
+
 import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 
 /*
  * Agent that provides speech capabilities in the system. Every time an agent needs to speak,

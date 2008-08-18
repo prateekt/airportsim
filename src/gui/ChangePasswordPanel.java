@@ -3,11 +3,14 @@ package gui;
 	Writen By: Eric Quillen
 */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.lang.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.SpringLayout;
 
 /** Creates a {@link JPanel} for the user to changer his/her password.
 *	@author Eric Quillen

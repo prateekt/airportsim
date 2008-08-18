@@ -3,14 +3,16 @@
  */
 package agents;
 
-import java.util.*;
+import gui.GroundControlPanel;
+import guiIntegration.AgentPair;
+import interfaces.GroundControl;
+import interfaces.Pilot;
+
+import java.util.ArrayList;
 
 import agent.StringUtil;
-import interfaces.*;
-import guiIntegration.*;
-import gui.*;
-import airport.*;
-import airport.objects.*;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
 
 /**
  * @author Henry Yuen
@@ -226,7 +228,7 @@ public class UserGroundControlAgent extends ATCAgent implements GroundControl {
 
 				//this is only if it took time for the
 				//pushback to happen
-				if (departure.getStatus() == DepartureMediator.DepartureStatus.RequestingPushback) {
+				if (departure != null && departure.getStatus() == DepartureMediator.DepartureStatus.RequestingPushback) {
 					departure.setStatus(DepartureMediator.DepartureStatus.Pushback);
 					groundControlPanel.update();
 				}

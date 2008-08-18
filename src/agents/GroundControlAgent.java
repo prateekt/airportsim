@@ -3,13 +3,17 @@
  */
 package agents;
 
-import java.util.*;
+import guiIntegration.AgentPair;
+import interfaces.GroundControl;
+import interfaces.Pilot;
+
+import java.util.ArrayList;
 
 import agent.StringUtil;
-import interfaces.*;
-import guiIntegration.*;
-import airport.*;
-import airport.objects.*;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
+import airport.objects.AirportNode;
 
 /**
  * @author Henry Yuen
@@ -122,7 +126,8 @@ public class GroundControlAgent extends ATCAgent implements GroundControl {
 				DepartureMediator departure =
 					departures.get(command.getPilot());
 
-				departure.setStatus(DepartureMediator.DepartureStatus.RequestingDirections);
+				if (departure != null)
+					departure.setStatus(DepartureMediator.DepartureStatus.RequestingDirections);
 			}
 
 

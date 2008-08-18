@@ -13,7 +13,10 @@ package guiIntegration;
 //SEE ALSO: TraceMessage.java and AgentPair.java in src/guiIntegration/
 
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.Vector;
 
 public class MessageData{
 

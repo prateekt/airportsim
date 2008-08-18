@@ -3,11 +3,15 @@ package gui;
 	Writen By: Eric Quillen
 */
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import airport.*;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import airport.TheSimulator;
 
 /** System Menu Bar.
 *	@author Eric Quillen

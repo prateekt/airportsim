@@ -1,13 +1,15 @@
 package agents;
 
-import java.util.*;
-import java.util.concurrent.Semaphore;
+import gui.LocalControlPanel;
+import guiIntegration.AgentPair;
+import interfaces.LocalControl;
+import interfaces.Pilot;
+
+import java.util.ArrayList;
 
 import agent.StringUtil;
-import interfaces.*;
-import guiIntegration.*;
-import airport.objects.*;
-import gui.*;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
 
 
 /**

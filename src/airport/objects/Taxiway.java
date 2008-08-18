@@ -1,7 +1,6 @@
 //created by James Marsh
 
 package airport.objects;
-import airport.*;
 
 /**
  * Directly relates to Way.

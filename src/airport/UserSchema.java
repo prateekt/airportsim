@@ -6,9 +6,8 @@
 //  Copyright 2007 __MyCompanyName__. All rights reserved.
 //
 package airport;
-import airport.objects.*;
-import java.util.*;
-import java.io.*;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class UserSchema implements Serializable{
 	int userID;

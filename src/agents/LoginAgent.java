@@ -7,12 +7,18 @@
 //
 
 package agents;
-import faa.FAAControl;
-import airport.*;
-import airport.objects.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 import agent.Agent;
-import gui.*;
-import java.util.*;
+import airport.Database;
+import airport.Personnel;
+import airport.UserSchema;
+import faa.FAAControl;
+import gui.LoginPanel;
+import gui.RegistrationPanel;
 
 public class LoginAgent extends Agent{
 

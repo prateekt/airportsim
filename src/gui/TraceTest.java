@@ -6,12 +6,14 @@ package gui;
  * written by: John Baldo
  */
 
-import guiIntegration.*;
-import java.util.concurrent.*;
-import guiIntegration.AgentPair.*;
+import guiIntegration.AgentPair;
+import guiIntegration.MessageData;
+import guiIntegration.TraceMessage;
+import guiIntegration.AgentPair.AgentType;
 
-import java.awt.*;
-import javax.swing.*;
+import java.util.concurrent.Semaphore;
+
+import javax.swing.JFrame;
 
 public class TraceTest extends JFrame{
 

@@ -3,11 +3,11 @@ package tests;
 import interfaces.GroundControl;
 import interfaces.Pilot;
 
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.Semaphore;
 
 import junit.framework.TestCase;
-import agent.*;
 import agents.ArrivalMediator;
 import agents.Command;
 import agents.DepartureMediator;
@@ -15,9 +15,6 @@ import agents.EchoType;
 import agents.Flight;
 import agents.GroundControlAgent;
 import agents.ScenarioParser;
-import agents.ArrivalMediator.ArrivalStatus;
-import agents.DepartureMediator.DepartureStatus;
-import agents.Flight.FlightType;
 import airport.TheSimulator;
 import airport.mock.MockClearanceDelivery;
 import airport.mock.MockLocalControl;

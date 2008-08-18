@@ -1,10 +1,16 @@
 package airport.objects;
 
-import java.util.*;
-import javax.xml.parsers.*;
-import org.xml.sax.*;
-import java.io.*;
-import org.w3c.dom.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 /**
  * Airport contains all the runways and hangars.

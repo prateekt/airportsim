@@ -1,16 +1,29 @@
 package gui;
 
-import javax.swing.*;
+import interfaces.Pilot;
 
-import java.awt.*;
-import javax.swing.event.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import agents.*;
-import airport.objects.*;
-import interfaces.*;
+import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
-import java.util.*;
+import agents.ATCAgent;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
+import airport.objects.Airport;
+import airport.objects.AirportNode;
 
 /**
  *

@@ -1,6 +1,6 @@
 package agent;
 
-import java.util.concurrent.*;
+import java.util.concurrent.Semaphore;
 
 /** Base class for simple agents */
 public abstract class Agent {

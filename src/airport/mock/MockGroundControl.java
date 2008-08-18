@@ -1,8 +1,9 @@
 package airport.mock;
 
+import guiIntegration.AgentPair;
+import interfaces.GroundControl;
+import interfaces.Pilot;
 import agents.EchoType;
-import interfaces.*;
-import guiIntegration.*;
 
 /*
  * Mock Ground Control object for unit testing.

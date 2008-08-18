@@ -1,5 +1,5 @@
 package guiIntegration;
-import java.util.concurrent.*;
+import java.util.concurrent.Semaphore;
 
 /*
  * A pairing of an Agent's name and the type of agent that they are.

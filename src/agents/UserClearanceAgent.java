@@ -1,12 +1,9 @@
 package agents;
 
-import airport.objects.Airport;
+import gui.ClearanceDeliveryPanel;
 import interfaces.ClearanceDelivery;
 import interfaces.Pilot;
-import gui.*;
-import interfaces.*;
-
-import java.util.*;
+import airport.objects.Airport;
 
 /**
  *

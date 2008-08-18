@@ -1,13 +1,31 @@
 package agents;
-import java.util.*;
-import java.util.concurrent.*;
+import guiIntegration.AgentPair;
+import guiIntegration.TraceDB;
+import interfaces.ATC;
+import interfaces.ClearanceDelivery;
+import interfaces.GroundControl;
+import interfaces.LocalControl;
+import interfaces.Pilot;
 
-import agent.*;
-import agents.Flight.FlightType;
-import interfaces.*;
-import guiIntegration.*;
-import airport.objects.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
+import agent.Agent;
+import agent.StringUtil;
 import airport.TheSimulator;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
+import airport.objects.AirplaneActionCallback;
+import airport.objects.Airport;
+import airport.objects.AirportNode;
+import airport.objects.Compass;
+import airport.objects.Way;
 /*
  * @author Prateek Tandon
  */

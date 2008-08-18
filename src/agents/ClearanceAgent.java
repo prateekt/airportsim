@@ -1,11 +1,9 @@
 package agents;
-import java.util.*;
-import java.util.concurrent.*;
-import agent.*;
-import interfaces.*;
-import guiIntegration.*;
-import airport.*;
-import airport.objects.*;
+import guiIntegration.AgentPair;
+import guiIntegration.TraceDB;
+import interfaces.ClearanceDelivery;
+import interfaces.Pilot;
+import airport.objects.Airport;
 
 /*
  * @author Patrick Monroe, Prateek Tandon

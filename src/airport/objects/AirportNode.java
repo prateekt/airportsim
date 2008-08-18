@@ -1,6 +1,6 @@
 package airport.objects;
 
-import java.util.*;
+import java.util.HashMap;
 
 public class AirportNode {
 

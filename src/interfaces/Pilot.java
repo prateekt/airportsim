@@ -3,10 +3,13 @@
  */
 package interfaces;
 
-import agents.Flight;
-import java.util.*;
-import airport.objects.*;
 import guiIntegration.AgentPair;
+
+import java.util.ArrayList;
+
+import agents.Flight;
+import airport.objects.Airplane;
+import airport.objects.AirplaneAction;
 
 /**
  * @author Henry Yuen

@@ -1,18 +1,24 @@
 package speech;
 
+import interfaces.Pilot;
+
+import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+import javax.swing.JTable;
+
 import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
 import edu.cmu.sphinx.util.props.PropertyException;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import gui.*;
-import interfaces.*;
-import javax.swing.*;
-import java.awt.event.*;
-import faa.FAAControl;
+import gui.ClearanceDeliveryPanel;
+import gui.FlightStatusPanel;
+import gui.GUI;
+import gui.GroundControlPanel;
+import gui.LocalControlPanel;
 
 public class SphinxSpeechRecognitionEngine extends SpeechRecognitionEngine {
 
